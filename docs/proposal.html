@@ -25,15 +25,15 @@
  <table border="1" cellpadding="3" cellspacing="2" class="axial">
   <tr>
    <th>Project:</th> 
-   <td><a href="index.html">PROJECTNAME</a></td> 
+   <td><a href="index.html">AI-Assisted Checkin Generator</a></td> 
   </tr>
   <tr>
    <th>Project Time-frame:</th> 
-   <td>2003/1/16 to 2003/3/19</td> 
+   <td>To be finalized</td> 
   </tr>
   <tr>
    <th>Summary:</th> 
-   <td>2-4 SENTENCE SUMMARY</td> 
+   <td>This project evolves Edward into an AI-assisted checkin generator for TM8 daily checkins. It aims to reduce checkin drafting friction by using Calendar data and, where feasible, other work activity sources such as Slack, Gmail, tasks, or user notes to produce grounded, editable checkin drafts.</td> 
   </tr>
   <tr>
    <th>Attached Worksheets:</th> 
@@ -65,100 +65,54 @@
  <div id="background">
  <h3>Background and Motivation</h3>
 
- <div class="todo">
-  TODO: Replace the example text below with text that describes your
-  project.  What are the needs or problems that you are trying to
-  address?  Why do these needs (still) exist?  Why are these problems
-  worth solving?  Who is the customer?  Write 2-4 paragraphs. 
- </div>
+ <p>Daily checkins are an important part of Thinking Machines' accountability and transparency practices. They help TM8s record completed work, make progress visible, and support internal reporting. However, recent weekly report data over the past eight weeks suggests that checkin submission remains inconsistent.</p>
+
+ <p>Edward currently helps reduce this friction by generating checkins from Google Calendar events. This is useful because Calendar already contains time-based work blocks, but Calendar alone may not fully capture the work TM8s complete during the day. Async coordination, Slack-based updates, documentation, debugging, research, and other unscheduled work may not always appear as calendar events.</p>
+
+ <p>This project explores an AI-assisted iteration of Edward that can generate more grounded and useful checkin drafts from available work activity data. The goal is to reduce the effort required to reconstruct daily work while preserving auditability, user control, and conservative handling of uncertainty.</p>
+
+ <p>The primary customers are TM8s who submit daily checkins. Secondary customers include managers and operations stakeholders who rely on checkin completion for visibility, accountability, and reporting.</p>
 
  <dl> 
 
   <dt>What is the setting and history behind this project?</dt> 
  
-  <dd class="sample1">Video games were originally designed and built as stand-alone
-  systems with the user playing against the machine.  Although many
-  advances have been made in game AI, humans still tend to enjoy
-  competing against other humans over a network.  There is a social
-  aspect to network gaming where people form teams that play and
-  leagues that play at scheduled times and keep scores over a prolonged
-  period.  This is important to video game vendors because it can
-  result in increased revenue and extend the sales life of their
-  products.</dd>
+  <dd>This project builds on the existing Edward web application. Edward allows TM8s to generate checkins in one click using events listed in their Google Calendar. It was created to reduce the burden of manually reconstructing daily work and to support the company's checkin practice.</dd>
+
+  <dd>Edward has already been helpful, but its current data source is limited. Since work activity can happen across Calendar, Slack, Gmail, tasks, and user notes, an AI-assisted version can improve the quality and completeness of generated checkins.</dd>
 
 
   <dt>What is the problem to be addressed?</dt> 
   
-  <dd class="sample1">There are 100 million users on the Internet, and hundreds of
-  websites dedicated to video game playing teams, called "clans". If
-  users have to explore to find the good clans that they can join, it
-  takes a lot of their time.  There is a need for a faster way for
-  users to find high quality clan websites that interest them and that
-  will allow them to join.</dd>
+  <dd>The problem is the low turnaround rate of TM8 daily checkins. On top of client work, internal responsibilities, and daily deliverables, submitting a checkin may be overlooked. When checkins pile up, it becomes harder for TM8s to remember what they completed during previous shifts.</dd>
+
+  <dd>The problem is not only that users forget to submit checkins. It is also that the evidence needed to write a good checkin is scattered across tools. This makes daily reporting more manual and more error-prone than it needs to be.</dd>
 
 
   <dt>What are some current approaches to this problem?</dt> 
  
-  <dd class="sample1">Users can tell each other about clan websites, but that is not
-  scalable because it depends on manual steps by people who may not be
-  motivated or honest in their evaluations.  There are already some
-  clan directory web sites, but they are not automated so they are
-  always out of date and do not rate the quality of the websites.
- 
-  <ul>
-   <li><a href="#">Example of current manually maintained clan website</a></li>
-   <li><a href="#">Link to existing competitor</a></li>
-  </ul>
- 
-  </dd>
+  <dd>The current approach is to use Edward, which generates checkins from Google Calendar events. This is already useful because it gives TM8s a fast starting point based on scheduled work blocks.</dd>
+
+  <dd>However, Calendar alone may not capture all meaningful work. It may miss async Slack updates, coordination work, task progress, research, debugging, documentation, and other work that was not represented as a calendar event.</dd>
 
 
   <dt>Why is this problem worth solving or worth solving better?</dt> 
  
-  <dd class="sample1">A better clan directory service would
-  be valuable because it could greatly increase player satisfaction and
-  allow them to spend more time playing and less time searching.
-  Implementing a better clan directory would cause players to use that
-  website rather than the existing directories.  The benefit to us
-  could come in the form of revenue from advertising and service fees
-  from video game vendors.</dd>
+  <dd>Checkins support transparency, accountability, and internal visibility into completed work. Improving the checkin process can reduce friction for TM8s and increase the likelihood that daily work is reported on time.</dd>
+
+  <dd>A better checkin generation flow can also reduce the cognitive burden of reconstructing past work. This is especially useful when a TM8 has a busy day, context switches across tools, or submits checkins after the workday has ended.</dd>
 
 
   <dt>How will this product be better than previous approaches?</dt> 
  
-  <dd class="sample1">We add innovative new features.  Our affiliate
-  directory will be larger an more detailed.  We will offer built-in
-  tools for managing membership and organizing events such as game
-  nights or tournaments.</dd>
+  <dd>This project will extend Edward by adding AI-assisted checkin generation. Instead of relying only on calendar event titles, the system can use structured activity data and AI prompting to produce clearer, more complete, and more professional checkin drafts.</dd>
   
-  <dd class="sample2">Our system will have similar functionality, but
-  it will have much better maintainability, scalability, and
-  security.</dd>
-
-  <dd class="sample3">Our system will have similar functionality, but
-  it is specifically aimed at a market segment that is not 
-  served by competing products.</dd>
-
-  <dd class="sample4">This is a "me-too" product that will go
-  head-to-head with very similar competing products in the same
-  market.  The market is large enough that we can be very happy with a
-  share of it.  Our unique competitive advantages are in non-product
-  area of our business such as sales, marketing, partnerships,
-  support, training, etc.  The product will have some simple built-in
-  "hooks" that leverage those advantages.</dd>
+  <dd>The product will start from Edward's existing calendar-based behavior and explore additional data sources such as Slack messages, Gmail context, task notes, or manually provided activity data where feasible. The AI model will help summarize, deduplicate, and format the final output while following guardrails that prevent invented or inflated work.</dd>
 
 
   <dt>Where is there more information on this problem?</dt> 
  
-  <dd>The following pages provide additional background and
-  motivation:
- 
-  <ul class="sample1">
-   <li><a href="#">Magazine article on this topic</a></li>
-   <li><a href="#">Industry analysis's report on massive-multi-player game market</a></li>
-   <li><a href="#">Quotes from game players</a></li>
-  </ul>
-  </dd> 
+  <dd>Additional information may be added later through project planning documents, prompt documentation, checkin examples, validator results, and implementation notes.</dd> 
  </dl>
  </div> <!-- /background -->
 
@@ -169,34 +123,20 @@
 
   <dt>What is the goal of this project?</dt>
  
-  <div class="tip">
-   TIP: This should be relatively short since you can reference terms
-   defined above.
-  </div>
+  <dd>The goal of this project is to evolve Edward into an AI-assisted checkin generator that can produce grounded, editable daily checkin drafts from available work activity data.</dd>
  
-  <dd class="sample1">This project will produce an engine for clan
-  directory websites that allows players to quickly find, evaluate,
-  and join clans.</dd>
+  <dd>The product should reduce the effort required to submit daily checkins, improve consistency of checkin outputs, and support higher checkin turnaround rates.</dd>
  
  
   <dt>What are the defining features and benefits of this product?</dt>
  
   <dd>
-  <ul class="sample1">
-   <li>Reusable website engine with functionality for creating,
-   editing, deleting, searching, categorizing, browsing, rating, and
-   commenting on clans.  This automates all clan operations and ensures
-   that users will always find information that is automatically
-   up-to-date.</li>
- 
-   <li>The reusable website engine will have a highly configurable
-   appearance that allows it to match the look and feel of the game.
-   This allows the reusable website engine to have a high-quality
-   appearance that is just as good as existing clan directories.</li>
- 
-   <li>The website engine will be secure and only allow users with the
-   proper permissions to edit, delete, or join a clan.  This will
-   prevent cheating or the submission of false information.</li>
+  <ul>
+   <li>AI-assisted checkin drafting from available work activity data.</li>
+   <li>Faster checkin generation with reduced manual reconstruction of daily work.</li>
+   <li>Improved consistency and formatting of daily checkin outputs.</li>
+   <li>Clear distinction between confirmed work and unclear work that needs clarification.</li>
+   <li>Potential support for multiple data sources beyond Calendar, such as Slack, Gmail, tasks, or user notes.</li>
   </ul>
   </dd>
 
@@ -204,13 +144,9 @@
   <dt>Where are other documents that further explain the goal of this
   project?</dt>
   
-  <dd class="sample1">
+  <dd>
   <ul>
-   <li><a href="LINK-TO-MOCKUP">Mock-up</a></li>
-   <li><a href="LINK-TO-EARLY-STORIES">Early user stories</a></li>
-   <li><a href="LINK-TO-QUOTES">Quotes from potential customers</a></li>
-   <li><a href="LINK-TO-COMPARISON">Comparison to existing competitors</a></li>
-   <li><a href="LINK-TO-DRAFT-FEATURES">Draft feature list</a></li>
+   <li>None yet. This section can later reference relevant documents as the project progresses.</li>
   </ul>
   </dd>
  </dl>
@@ -220,34 +156,6 @@
 
  <div id="scope">
  <h3>Scope</h3>
- <div class="todo">
-  TODO: Replace the sample text below with a clear statement of the
-  scope of your project.  What are the high-level things that you plan
-  to do, and that you will not do?  What are your important
-  simplifying assumptions?  Try to guard against reasonable
-  misunderstandings that might arise if you did not explain the scope.
-  It can take the form of a paragraph, bullet list, in/out list, and/or
-  UML context diagram.
- </div>
-
- <p class="sample1">We want to focus on the web application itself,
- and the features of that application that help build a good gaming
- community.</p>
-
- <p class="sample2">See the <a href="LINK-TO-CONTEXT-DIAGRAM">context
- diagram</a>.</p>
-
- <ul class="sample3">
-  <li>Work with common servers and browsers that we are already
-  familiar with.</li>
-  <li>Allow easy customizations of fonts and colors, with the same
-  basic page layout.</li>
-  <li>Enough security to greatly discourage abuse</li>
-  <li>The web site content discusses a game, but it will not need to
-  actually integrate with any game software</li>
- </ul>
-
-
 
  <table border="1" cellpadding="3" cellspacing="2" class="sample4" width="100%">
   <tr>
@@ -256,70 +164,95 @@
   </tr>
 
   <tr>
-   <td>Building a web application for use with standard web
-   servers and application servers</td> 
-   <td>Building a new web server or application server</td>
+   <td>Iterating on the existing Edward web application</td> 
+   <td>Rebuilding Edward from scratch as a completely new product</td>
   </tr>
 
   <tr>
-   <td>Working the most popular browsers (IE6, NN7/Mozilla)</td>
-   <td>Working with uncommon or outdated browsers</td>
+   <td>Preserving Edward's calendar-based checkin generation behavior</td>
+   <td>Removing or replacing the existing calendar-based workflow</td>
   </tr>
 
   <tr>
-   <td>Security in the form of user accounts, passwords, and
-   permissions</td>
-   <td>Special security against hackers.  Finding or patching security
-   holes in existing software components.</td>
+   <td>Using Google Calendar data as a primary source for timed work blocks</td>
+   <td>Guaranteeing that Calendar captures all user work activity</td>
   </tr>
 
   <tr>
-   <td>One simple sample look-and-feel and instructions for
-   customization</td>
-   <td>Our own high-quality look-and-feel.  A library of look-and-feel
-   options.</td>
+   <td>Exploring AI-assisted generation of checkin drafts</td>
+   <td>Fully automating checkin submission without user review</td>
   </tr>
 
   <tr>
-   <td>Database and server load and data volume that can be handled by
-   one computer.</td>
-   <td>Managing a cluster of servers.</td>
+   <td>Creating and refining a Custom GPT prompt for checkin generation</td>
+   <td>Training or fine-tuning a custom foundation model</td>
   </tr>
 
   <tr>
-   <td>Keeping track of which users are in which
-   clans</td>
-   <td>Tracking all user activity on the site and
-   producing custom reports</td>
+   <td>Maintaining prompt files, checkin examples, project tags, and non-work event rules</td>
+   <td>Building a large prompt management platform</td>
   </tr>
 
   <tr>
-   <td>Displaying advertisements to visitors. Billing
-   advertisers for impressions.</td>
-   <td>Automatically selecting ads that fit the
-   visitor's interests.  On-line management of advertising or
-   real-time reporting to advertisers.  Participating in existing
-   banner advertising affiliate networks.</td>
+   <td>Creating simulated test cases for validation</td>
+   <td>Treating simulated data as real user activity</td>
+  </tr>
+
+  <tr>
+   <td>Building a simple output validator for generated checkins</td>
+   <td>Building a complete semantic evaluator for all possible checkin quality issues</td>
+  </tr>
+
+  <tr>
+   <td>Testing Slack API data retrieval as a possible source of work activity</td>
+   <td>Guaranteeing full Slack coverage across all public and private channels</td>
+  </tr>
+
+  <tr>
+   <td>Returning structured activity data from Slack or Calendar for AI-assisted drafting</td>
+   <td>Storing long-term raw Slack, Gmail, or Calendar data</td>
+  </tr>
+
+  <tr>
+   <td>Exploring OpenAPI Actions for backend integration</td>
+   <td>Deploying production-grade company-wide integrations in the first version</td>
+  </tr>
+
+  <tr>
+   <td>Keeping the user in control of reviewing and copying or submitting checkins</td>
+   <td>Posting checkins automatically without explicit user confirmation</td>
+  </tr>
+
+  <tr>
+   <td>Improving checkin turnaround and drafting experience</td>
+   <td>Replacing manager review, accountability processes, or company checkin policy</td>
   </tr>
  </table>
+
+ <p>Important simplifying assumptions:</p>
+ <ul>
+  <li>Users remain responsible for reviewing generated checkins before submission.</li>
+  <li>AI-generated outputs should be treated as drafts, not final truth.</li>
+  <li>The system should avoid inventing work or inflating hours.</li>
+  <li>Calendar remains the most reliable source for timed work blocks.</li>
+  <li>Slack, Gmail, and other sources are primarily used for context unless reliable durations are provided.</li>
+  <li>Initial testing may use tunneling or local development before proper deployment.</li>
+ </ul>
  </div> <!-- /scope -->
   
 
 
  <div id="deliverables">
  <h3>Deliverables</h3>
- <div class="todo">
-  TODO: Briefly list project deliverables.  When you are done, what will you
-  deliver to the customer?  This can be copied from the draft project
-  plan and simplified to reduce technical detail.
- </div>
 
- <ul class="sample1">
-  <li>Clan website directory engine</li>
-  <li>Customization guide</li>
-  <li>Sample look-and-feel</li>
-  <li>On-line help for end users</li>
-  <li>Command-line advertising configuration tool and report generator</li>
+ <ul>
+  <li>An iteration of the Edward web application</li>
+  <li>An AI-assisted checkin generation workflow</li>
+  <li>A Custom GPT configuration for generating checkins</li>
+  <li>Supporting knowledge files such as prompt instructions, checkin examples, project tag mappings, and non-work event rules</li>
+  <li>A simple validator for generated checkin output syntax</li>
+  <li>An exploratory backend/API prototype for retrieving activity data, if feasible within scope</li>
+  <li>Documentation for setup, testing, and future improvements</li>
  </ul>
  </div> <!-- /deliverables -->
 
@@ -329,50 +262,23 @@
  <h3>Risks and Rewards</h3>
  <dl>
 
-  <div class="todo">
-   TODO: Briefly list and rank major risks.  Risks are detailed in the
-   draft <a href="plan.html">project plan</a>.  For this proposal
-   document, you should select the most important risks from the
-   project plan and explain them in non-technical terms.
-  </div>
-
   <dt>What are the main risks of this project?</dt>
  
-  <dd class="sample1">
+  <dd>
    <ol>
-    <li>There is a potential conflict between the goals of a
-    high-quality appearance and one that is completely customizable.  We
-    can only succeed if players find the web site appealing, and game
-    vendors can customize it with no more effort than would be needed to
-    build a static website.  We already have a design in mind that will
-    address this risk and we will review it with a web site designer who
-    worked for a game vendor site.</li>
-  
-    <li>There are significant technical difficulties in building a web
-    site and web application.  This will be a risk because one person on
-    our team has much experience with the relevant tools and
-    technologies.  Although the others will learn, we will certainly
-    make some mistakes and suboptimal choices.  We will address this
-    risk by scoping the project such that we have enough time to train
-    and to review the design and implementation.</li>
-  
-    <li>The schedule for this project is very short.  We will manage
-    this by planning a conservatively scoped functional core and series
-    of functional enhancements that can be individually slipped to later
-    releases if needed.</li>
+    <li>The AI model may misinterpret activity context from Slack messages, Gmail emails, calendar events, or user notes. This could result in checkins that are incomplete, misleading, duplicated, or too vague.</li>
+    <li>The system may hallucinate or overstate work. Since checkins are tied to accountability, the product must avoid inventing work, inflating hours, or presenting uncertain activity as confirmed.</li>
+    <li>There may be privacy and access risks if the system retrieves data from Slack, Gmail, Calendar, or other internal tools. The project should avoid storing raw sensitive data unless necessary and should prioritize least-privilege access.</li>
+    <li>User trust may be affected if generated outputs require too many corrections. The product must be conservative, transparent, and easy to review.</li>
    </ol>
   </dd>
 
  
   <dt>What are the main rewards if this project succeeds?</dt>
 
-  <dd class="sample1">If we accomplish the elements of our plan, our
-  clan directory website engine will replace existing clan directory
-  websites and generate traffic which will result in advertising
-  revenue and/or hosting fees paid by game vendors.  Our ability to
-  overcome the challenges above will determine time to market, the
-  speed of adoption, the amount of web traffic, and thus the generated
-  revenue over time.</dd>
+  <dd>If successful, the project can make daily checkins easier and faster for TM8s. It can reduce the manual effort of reconstructing daily work and help users submit checkins more consistently.</dd>
+
+  <dd>The project may also improve checkin quality by producing clearer, more complete, and better-formatted drafts. Over time, this could help increase checkin turnaround rates and strengthen internal transparency and accountability.</dd>
  </dl>
  </div> <!-- /risks -->
 
