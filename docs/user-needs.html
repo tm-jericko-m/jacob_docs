@@ -26,7 +26,7 @@
  <table border="1" cellpadding="3" cellspacing="2">
   <tr>
    <th>Project:</th> 
-   <td><a href="index.html">PROJECTNAME</a></td>
+   <td><a href="index.html">AI-Assisted Checkin Generator</a></td>
   </tr>
   <tr>
    <th>Attached worksheets:</th> 
@@ -70,16 +70,11 @@
   select one, or write your own.
  </div>
 
- <p class="sample1">We were given an <a href="LINK">initial project
- description</a> that is agreed to by all stakeholders.</p>
+ <p class="sample1">The project aims to improve the current Edward app as Thinking Machines&rsquo; daily checkin generator. Edward currently helps TM8s generate checkins from Google Calendar data. The Jacob AI Assistant Checkin Generator aims to build on this by using AI to create more complete, grounded, and copy-pastable checkin drafts.</p>
 
- <p class="sample2">After several interviews and brainstorming
- sessions, we have <a href="LINK">revised project description</a> that
- has been agreed to by all stakeholders.</p>
+ <p class="sample2">The goal is to reduce the effort needed for TM8s to submit daily checkins while improving the completeness and consistency of those checkins. The project will explore additional sources of work activity, such as Slack, Gmail, task notes, and user-provided context, so that checkins are not limited only to calendar events.</p>
 
- <p class="sample3">There are still a few different (but overlapping)
- visions of what this project needs to achieve.  When a single joint
- vision is agreed to, it will be hyper-linked from here.</p>
+ <p class="sample3">Stakeholders should agree that generated checkins remain drafts for user review, and that the system should avoid inventing work, inflating hours, or presenting uncertain activity as confirmed.</p>
 
 
  </div> <!-- /agreedgoals -->
@@ -98,44 +93,23 @@
 
   <dt>What is the system's business environment?</dt>
 
-  <dd class="sample1">Each real estate agent works with a set of
-  potential buyers and sellers.  Real estate agents do not share
-  customer data with other agents, because they do not want to share
-  commissions.  Information on specific available homes changes daily,
-  and this tool must help them keep up.</dd>
+  <dd class="sample1">The system will be accessible through the Edward web application. Edward is a deployed web app that TM8s can visit through a URL. Its AI-assisted iteration, the Jacob AI Assistant Checkin Generator, will be introduced through the Edward user interface so users can choose between the standard Edward flow and the newer AI-assisted checkin flow.</dd>
 
-  <dd class="sample2">Game players may visit several free web sites to
-  find information about teams or "clans".  There is usually more
-  information available than they would choose to read, the challenge
-  is in having the most fun with the least effort.  This website must
-  be familiar to players who have used other sites, but it must also
-  be better.</dd>
+  <dd class="sample2">When users choose Jacob, they will be routed to the Custom GPT or AI-assisted checkin experience. This experience will use uploaded prompt files and knowledge documents as its core instructions for generating daily checkins. The goal is to make checkin generation easier while keeping the user in control of reviewing and submitting the final output.</dd>
 
 
   <dt>What is the system's physical environment?</dt>
 
-  <dd class="sample1">This system is a web server that will run on a
-  machine in a co-located data center with 24x7 monitoring, UPS,
-  air-conditioning, etc.  Users of this system are typically at their
-  offices.</dd>
+  <dd class="sample1">The system is expected to behave similarly to the current Edward web application: a web-based tool that can eventually be made available to TM8s through a deployed domain. During development, the Jacob-related backend or API experiments may run locally and be exposed through tunneling for testing API calls through the Custom GPT Actions/OpenAPI setup.</dd>
 
-  <dd class="sample2">This application runs on hand-held devices that
-  will often be used while the user is walking from one section of the
-  warehouse to another.  Lighting is good in that environment, but
-  there are many noises and distractions.</dd>
+  <dd class="sample2">This development setup will allow the team to test whether the Custom GPT can call backend endpoints that retrieve activity data from supported platforms. After testing, the expected path is to deploy the backend and web application properly for broader company use, similar to how Edward is already deployed.</dd>
 
 
   <dt>What is the system's technology environment (hardware and software)?</dt>
 
-  <dd class="sample1">60% of game players have machines with P-II or
-  equivalent processors, while 30% have P-I machines, and 10% have
-  less powerful machines.  While many users have 17-inch monitors,
-  15-inch monitors or laptops with 1024x768 resolution are also
-  common.</dd>
+  <dd class="sample1">The system will primarily run in a web environment. Users are expected to access it through standard modern browsers on their machines. The existing Edward application provides the starting point for the frontend experience.</dd>
 
-  <dd class="sample2">65% of game players are using Windows 98 or
-  Me. 30% are using NT, 2000, or XP. The remaining 5% use Mac OS X,
-  Mac OS 9, or Linux.</dd>
+  <dd class="sample2">The technology environment may include the current Edward codebase, a Custom GPT configuration, prompt and knowledge files, Google Calendar API integration, possible Slack/Gmail API exploration, an OpenAPI schema for Actions, and a backend service for retrieving structured activity data. During development, local servers and tunneling may be used before moving to a deployed backend.</dd>
 
 
  </dl>
@@ -166,63 +140,59 @@
  <dl class="sample1">
   <dt id="all">All</dt>
 
-  <dd>All stakeholders share the following key needs:  
+  <dd>All stakeholders share the following key needs:
    <ol>
-    <li>Security against abuses by other site visitors</li>
-    <li>Convenient access to the site any time over the Internet</li>
+    <li>AI-assisted checkin generation</li>
+    <li>Up-to-date and accurate checkin drafts</li>
+    <li>Easier retrieval of work activity data</li>
+    <li>Less manual searching across Calendar, Slack, Gmail, or task tools</li>
+    <li>Clear distinction between confirmed work and unclear work</li>
    </ol>
   </dd>
 
 
-  <dt id="player">Player</dt>
+  <dt id="tm8">TM8</dt>
 
-  <dd>Players want to have fun.  That means a sense of discovery,
-  challenge, satisfaction, and community.  Some players who become
-  involved in clans will spend a few hours a week, while others will
-  spend over 20 hours a week.  So, they need new content posted often
-  to keep them interested.  Players involved in clans are often power
-  users and have high expectations for the functionality and quality
-  of the site, but they may not have much knowledge of computer
-  science.
+  <dd>TM8s are the primary users of the system. They need a faster and easier way to generate their daily checkins from the work they completed during the day. They benefit from being able to view or reconstruct their daily tasks without manually searching through multiple applications.
 
    <p>Key needs:</p>
    <ol>
-    <li>Easily find information about clans</li>
-    <li>Keep in touch with members of his/her own clan</li>
-    <li>Understand the date and time of tournament play</li>
-    <li>Easily report cheaters</li>
+    <li>Generate checkins with minimal effort</li>
+    <li>Retrieve daily work activity from available sources</li>
+    <li>Review and edit checkins before submission</li>
+    <li>Avoid missed or backlogged checkins</li>
+    <li>Produce checkins that are accurate, complete, and easy to paste into Slack</li>
    </ol>
   </dd>
 
 
-  <dt id="advplayer">Player &gt; Advanced player</dt>
+  <dt id="operations">Operations / Admin Side</dt>
 
-  <dd>Advanced players seek more challenges to continue the sense of
-  discovery.  They tend to play over 20 hours a week. They have seen
-  more of the game details, now the need to see the "big picture".
+  <dd>Operations and admin stakeholders need higher checkin submission rates so that TM8 work reporting is easier to monitor and maintain. They benefit when checkins are submitted consistently and when the process creates less friction for employees.
 
    <p>Key needs:</p>
    <ol>
-    <li>View metrics that compare multiple clans</li>
-    <li>Understand relationships between clans</li>
-    <li>Understand overall schedule of tournaments</li>
+    <li>Improved checkin submission rates</li>
+    <li>Better visibility into completed daily work</li>
+    <li>Reduced checkin backlog</li>
+    <li>Consistent checkin format</li>
+    <li>Confidence that generated checkins are grounded and not inflated</li>
    </ol>
   </dd>
 
 
-  <dt id="STAKEHOLDER1">STAKEHOLDER1</dt>
+  <dt id="managers">Managers / Reviewers</dt>
 
-  <dd>PARAGRAPH</dd>
+  <dd>Managers or reviewers may use checkins to understand progress, accountability, and potential blockers. They need checkin outputs to be clear, accurate, and not misleading.
 
-
-  <dt id="STAKEHOLDER2">STAKEHOLDER2</dt>
-
-  <dd>PARAGRAPH</dd>
-
-
-  <dt id="STAKEHOLDER3">STAKEHOLDER3</dt>
-
-  <dd>PARAGRAPH</dd>
+   <p>Key needs:</p>
+   <ol>
+    <li>Reliable checkin quality</li>
+    <li>Concise summaries of completed work</li>
+    <li>Visibility into missing or unclear work details</li>
+    <li>Assurance that AI-generated checkins remain user-reviewed</li>
+   </ol>
+  </dd>
  </dl>
  </div> <!-- end section -->
  
@@ -278,40 +248,20 @@
 
  <dl class="sample1">
   
-  <dt id="invited-to-join">invited-to-join</dt>
+  <dt id="generate-checkin-after-long-day">generate-checkin-after-long-day</dt>
 
-  <dd>John has gotten pretty good at SuperShooter by
-  playing on public servers about 8 hours a week for the last 3 weeks.
-  John has chatted with Bob about strategies and they have enjoyed
-  some duels.  Bob is a member of the RedDawn clan. That clan plays a
-  tournament on a private server Friday nights.  Bob invites John to
-  visit the RedDawn website and join.  (Source: <a
-  href="interview-notes.html">INTERVIEWEE</a>)</dd>
+  <dd>A TM8 has had a long workday and wants to submit a checkin without manually reconstructing everything from memory. Calendar data alone does not fully capture all the work completed that day. The TM8 opens the AI-assisted checkin experience and uses a prompt such as &quot;Generate my checkins today.&quot; The system returns a detailed, copy-pastable checkin draft based on available work activity data, which the TM8 reviews and pastes into Slack.</dd>
 
 
 
-  <dt id="finding-the-tournament">finding-the-tournament</dt>
+  <dt id="clarify-incomplete-checkin">clarify-incomplete-checkin</dt>
 
-  <dd>Bob is visiting his friend.  He tries to use his
-  friend's computer to log onto the RedDawn SuperShooter tournament.
-  But, he does not remember the exact name of the server.  So, he
-  visits the RedDawn clan website to find that information.  (Source:
-  PERSONNAME)</dd>
+  <dd>A TM8 tries to generate a checkin for the day, but the available context from Calendar, Slack, Gmail, and other tools does not clearly add up to a complete workday. Instead of inventing missing hours, the AI assistant asks probing clarification questions. These questions help the TM8 remember additional tasks completed during the day. After the TM8 provides the missing context, the AI assistant generates a more complete and accurate checkin.</dd>
 
   
-  <dt id="STORYNAME1">STORYNAME1</dt>
+  <dt id="recover-checkin-backlog">recover-checkin-backlog</dt>
 
-  <dd>PARAGRAPH</dd>
-
-  
-  <dt id="STORYNAME2">STORYNAME2</dt>
-
-  <dd>PARAGRAPH</dd>
-
-  
-  <dt id="STORYNAME3">STORYNAME3</dt>
-
-  <dd>PARAGRAPH</dd>
+  <dd>A TM8 has missed several days of checkins and now has a one-week backlog. Instead of manually searching through Calendar, Slack, Gmail, and other workspaces for each day, the TM8 asks the AI assistant to generate checkins for the missed dates. The system collates available evidence across the relevant days and presents draft checkins for the TM8 to review. After making minor corrections, the TM8 approves the final versions and catches up on the backlog.</dd>
  </dl>
  </div> <!-- /userstories -->
 
@@ -325,19 +275,14 @@
   averages or rates of increase, note that as well.
  </div>
 
- <p>By the end of the first year of service, we should to reach the
- following system capacity:</p>
+ <p>After a considerable period of use, the tool should help improve the checkin submission rate among TM8s. TM8s should spend less time generating their daily checkins, and the issue of checkin backlogs piling up should be reduced.</p>
 
  <ul class="sample1">
-  <li>50,000 user records in the clan website account database (rate:
-  50-500 new registrations each day)</li>
-
-  <li>1000 users browsing the web site any given time</li>
-  <li>1000 gaming clans</li>
-  <li>1000 members of a single clan (average: 8)</li>
-  <li>4 MB max disk space for each clan (average: 0.5 MB)</li>
-  <li>100 game vendors posting advertisements on the site</li>
-  <li>1000 actual advertisements in the database</li>
+  <li>The system should support regular daily use by TM8s who need to generate checkins from available work activity data.</li>
+  <li>Generated outputs should remain fast enough to be useful in a daily workflow.</li>
+  <li>Generated outputs should be reliable enough that users do not need to heavily rewrite the results.</li>
+  <li>The quality of generated checkins should be evaluated through test cases and validator results.</li>
+  <li>An early benchmark is that generated checkins pass the validator at least 90% of the time across a defined set of test cases.</li>
  </ul>
  </div> <!-- /capacity -->
 
