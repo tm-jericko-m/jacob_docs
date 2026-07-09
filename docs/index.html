@@ -25,28 +25,19 @@
 
 <h3>Mission</h3>
 
-<div align="right"
- style="background-color:#ffc; padding:1em; float:right; border:#cc0 3px outset; margin:1em; text-align:left;">
-
- <a href="templates/frameset.html">Browse templates</a><br />
- <a href="http://readyset.tigris.org/servlets/ProjectDocumentList">Download templates</a><br />
- <a href="http://readyset.tigris.org/words-of-wisdom/">Words-of-wisdom</a><br />
- <a href="http://www.readysetpro.com/">Professional version</a>
-
-</div>
-
 <dl>
 
 <dt>What problem does this project address?</dt>
 
 <dd>
-Jacob addresses the challenge faced by TM8 members in preparing accurate end-of-day (EOD) checkins. While manually writing checkins is time-consuming and often depends on incomplete memory, much of the necessary information already exists across workplace tools such as Google Calendar, Gmail, and Slack. Jacob consolidates these sources into a single activity log, enabling AI-assisted generation of grounded, evidence-based daily checkins.
+Jacob addresses the limitations of Edward, the existing daily checkin generator used by TM8s. Although Edward assists users in generating end-of-day (EOD) checkins, it relies primarily on calendar events, resulting in limited context for accurately summarizing a user's daily work. Jacob expands the available data sources by incorporating information from Google Calendar, Gmail, and Slack into a unified activity log, enabling AI-assisted generation of more grounded, comprehensive, and accurate daily checkins.
+
 </dd>
 
 <dt>What is the goal of this project?</dt>
 
 <dd>
-Jacob is an evolution of Edward, the existing daily checkin generator. Edward primarily generates checkins from calendar events and their associated durations. Jacob extends this capability by incorporating additional workplace data sources—including Slack conversations and Gmail activity—to provide richer context for AI-assisted checkin generation. The objective is to improve both the completeness and accuracy of generated checkins while reducing the manual effort required from TM8 members.
+Jacob is an iteration of Edward, the existing daily checkin generator. Edward primarily generates checkins from calendar events and their associated durations. Jacob extends this capability by incorporating additional workplace data sources including Slack conversations and Gmail activity, to provide richer context for AI-assisted checkin generation. The objective is to improve both the completeness and accuracy of generated checkins while reducing the manual effort required from TM8 members.
 </dd>
 
 <dt>What are some key features that define the product?</dt>
@@ -65,7 +56,7 @@ Jacob is an evolution of Edward, the existing daily checkin generator. Edward pr
 <dt>What makes this product different from others?</dt>
 
 <dd>
-Unlike traditional checkin generators that rely primarily on calendar events, Jacob aggregates multiple workplace data sources to produce more grounded summaries of completed work. Rather than simply summarizing scheduled events, it combines contextual information from Slack conversations, Gmail communication, and calendar activities before generating the final checkin. The integrated Custom GPT is also trained using organization-specific guidance and can ask follow-up questions whenever the available evidence is insufficient, reducing hallucinations and improving auditability.
+Unlike its predecessor, which relies primarily on calendar events for checkin generation, Jacob aggregates multiple workplace data sources to produce more grounded summaries of completed work. Rather than simply summarizing scheduled events, it combines contextual information from Slack conversations, Gmail communication, and calendar activities before generating the final checkin. The integrated Custom GPT is also trained using organization-specific guidance and can ask follow-up questions whenever the available evidence is insufficient, reducing hallucinations and improving auditability.
 </dd>
 
 </dl>
@@ -77,13 +68,13 @@ Unlike traditional checkin generators that rely primarily on calendar events, Ja
 <dt>What is the scope of this project?</dt>
 
 <dd>
-The scope of Jacob is to provide an AI-assisted workflow for generating grounded daily checkins using workplace activity data. It includes authentication with supported services, retrieval of user activities, orchestration of collected data into a unified activity log, and AI-assisted generation of checkins. The system also supports generating checkins for previous dates, helping TM8 members complete backlogged reports using historical workplace activity.
+The scope of Jacob is to provide an AI-assisted workflow for generating data-driven daily checkins using workplace activity data. It includes authentication with supported services, retrieval of user activities, orchestration of collected data into a unified activity log, and AI-assisted generation of checkins. The system also supports generating checkins for previous dates, helping TM8 members complete backlogged reports using historical workplace activity.
 </dd>
 
 <dt>What are the high-level assumptions or ground rules for the project?</dt>
 
 <dd>
-The accuracy of generated checkins depends on the availability and completeness of workplace activity data. Users remain responsible for reviewing generated outputs before submission. The system is intended to assist—not replace—the user's judgment when preparing daily reports.
+The accuracy of generated checkins depends on the availability and completeness of workplace activity data. Users remain responsible for reviewing generated outputs before submission. The system is intended to assist (not replace) the user's judgment when preparing daily reports.
 </dd>
 
 <dt>What are we not going to do?</dt>
@@ -107,7 +98,7 @@ Yes. Jacob is an extension of the Edward Daily Checkin Generator. It builds upon
 <dt>What is the status of this project?</dt>
 
 <dd>
-Jacob is currently under active development within the 10-week timeframe of Thinking Machines' internship program. Core functionality—including Calendar, Gmail, Slack integration, backend activity orchestration, and AI-assisted checkin generation—is being implemented incrementally, with additional refinements planned throughout the internship period.
+Jacob is currently under active development within the 10-week timeframe of Thinking Machines' internship program. Core functionality, including Calendar, Gmail, Slack integration, backend activity orchestration, and AI-assisted checkin generation, is being implemented incrementally, with additional refinements planned throughout the mentioned period.
 </dd>
 
 </dl>
@@ -119,7 +110,7 @@ Jacob is currently under active development within the 10-week timeframe of Thin
 <dt>Who should use this product?</dt>
 
 <dd>
-Jacob is intended for TM8 members who submit daily checkins as part of their regular workflow. It is particularly useful for developers, consultants, and project teams who manage work across multiple workplace platforms and wish to reduce the manual effort involved in preparing accurate daily reports. Project maintainers, future developers, and stakeholders may also use the accompanying documentation to understand the system architecture, implementation decisions, and project workflow.
+Jacob is intended for TM8s who submit daily checkins as part of their regular workflow. It is particularly useful for developers, consultants, and project teams who manage work across multiple workplace platforms and wish to reduce the manual effort involved in preparing accurate daily reports. Project maintainers, future developers, and stakeholders may also use the accompanying documentation to understand the system architecture, implementation decisions, and project workflow.
 </dd>
 
 <dt>How can users get started?</dt>
