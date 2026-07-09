@@ -5,4 +5,5 @@ test_output.jsonl
 validate_checkins.py
 \[draft\]*
 
-customgpt files/
+# customgpt files/
+customgpt files*
