@@ -3,6 +3,7 @@ NON_WORK_EVENTS.md
 PROJECT_TAGS.md
 test_output.jsonl
 validate_checkins.py
+validate_dataops_checkins.py
 \[draft\]*
 
 # customgpt files/
