@@ -1,1494 +1,519 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN"
 "http://style.tigris.org/tigris_transitional.dtd">
+
 <html>
 <head>
- <style type="text/css">
+<style type="text/css">
 /* <![CDATA[ */ 
 @import "css/readyset.css"; 
 @import "css/inst.css";
 /*  ]]> */
  </style>
-
-<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
- <title>Use Cases</title>
+<link href="css/print.css" media="print" rel="stylesheet" type="text/css"/>
+<title>Use Cases</title>
 </head>
-
 <body>
 <div class="app">
 <div class="readyset">
-
-
 <h2><a href="srs.html">SRS</a> &gt; <a href="use-case-suite.html">Use Case Suite</a> &gt; Use Cases</h2>
-
- <div id="releaseinfo">
- <h3>Release Information</h3>
- <table border="1" cellpadding="3" cellspacing="2" class="axial">
-  <tr>
-   <th>Project:</th> 
-   <td><a href="index.html">PROJECTNAME</a></td> 
-  </tr>
-  <tr>
-   <th>Internal Release Number:</th> 
-   <td>X.Y.Z</td> 
-  </tr>
-  <tr>
-   <th>Related Documents:</th> 
-   <td>
-    <div><a href="proposal.html">Project proposal</a> &gt;
+<div id="releaseinfo">
+<h3>Release Information</h3>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+<tr>
+<th>Project:</th>
+<td><a href="index.html">Jacob (formerly Edward): An AI-Assisted Checkin Generator</a></td>
+</tr>
+<tr>
+<th>Internal Release Number:</th>
+<td>1.0.0</td>
+</tr>
+<tr>
+<th>Related Documents:</th>
+<td>
+<div><a href="proposal.html">Project proposal</a> &gt;
          <a href="user-needs.html">Use needs</a></div>
-    <div><a href="feature-set.html">Feature set</a></div>
-    <div><a href="use-case-format.html">Use case format</a></div>
-    <div><a href="LINK-TO-DIAGRAM">Use case diagram</a></div>
-    <div>LINKS TO RELEVANT STANDARDS</div>
-    <div>LINKS TO OTHER DOCUMENTS</div>
-   </td>
-  </tr>
- </table>
-</div> <!-- /releaseinfo -->
+<div><a href="feature-set.html">Feature set</a></div>
+<div><a href="use-case-format.html">Use case format</a></div>
+<div><a href="LINK-TO-DIAGRAM">Use case diagram</a></div>
 
-<div class="todo">
- TODO: Note any aspects that are common to all use cases here.  This
- helps keep the use cases themselves short.  If any use case is an
- exception, note it's specific value to replace or add to the default.
-</div> 
+</td>
+</tr>
+</table>
+</div> <!-- /releaseinfo -->
 
 <div id="defaults">
 <h3>Default Aspects of All Use Cases</h3>
 <table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Direct Actors:</th>
-  <td>
-   <div>User: end-user in any role</div>
-   <div>System: The system being built</div>
-   <div>When actors are not listed, assume User is doing it.</div>
-   <div>Items beginning with &quot;see&quot; indicate that System has presented a new screen.</div>
-  </td>
- </tr>
- <tr>
-  <th>Stakeholders:</th>
-  <td>Project Owners and other members</td>
- </tr>
- <tr>
- <th>Prereq:</th>
-  <td>User is logged in</td>
- </tr>
+<tr>
+<th>Direct Actors:</th>
+<td>
+<div>User: end-user in any role</div>
+<div>System: The system being built</div>
+<div>When actors are not listed, assume User is doing it.</div>
+<div>Items beginning with "see" indicate that System has presented a new screen.</div>
+</td>
+</tr>
+<tr>
+<th>Stakeholders:</th>
+<td>Project Owners and other members</td>
+</tr>
+<tr>
+<th>Prereq:</th>
+<td>User is logged in</td>
+</tr>
 </table>
 </div> <!-- /defaults -->
 
-<div class="todo">
- TODO: For each use case listed in the <a
- href="use-case-suite.html">use case suite</a>, create an HTML anchor
- and heading with it's unique ID, then fill in the rows of the table
- to specify the use case in detail.  
-</div>
 
-
-<div class="tip"> 
-  TIP: It is OK to simply list the names of a lot of use cases without
-  actually writing the use case in detail.  Document the most
-  important use cases first and come back to less important ones
-  later.
-</div>
-
-<div class="tip">
- TIP: See detailed tips in the <a
- href="use-case-format.html#guidelines">guidelines for writing use
- cases</a>.
-</div>
-
-
-<div id="UC-00">
-<h3>UC-00: Configure the site</h3>
-<div>
-<table border="1" cellpadding="3" cellspacing="2"  class="axial">
- <tr>
-  <th>Summary:</th>
-
-  <td>The administrator navigates to the site configuration page and
-  uses it to change the behavior of the web application.
-  Specifically, the user-visible timezone is being set.</td>
-
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Rarely</td>
- </tr>
- <tr>
-  <th>Direct Actors:</th>
-  <td>
-   <div>Admin: Web-site administrator</div>
-  </td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>visit SiteConfiguration page</li>
-    <li>see site configuration options</li>
-    <li>enter timezone abbreviation for date displays</li>
-    <li>submit form</li>
-    <li>confirm changes</li>
-    <li>see SiteConfiguration page again, with updated values</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If the timezone abbreviation is incorrect, an error message
-    will be displayed and no changes will be made.
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-
-    <li>How will administrators know the right timezone abbreviation?
-    They would know it if they live in that timezone.  Maybe we could
-    provide a drop-down list of all choices, but each would need some
-    explanation.</li>
-
-   </ul>
-  </td>
- </tr>
-</table>
-</div>
-</div>
-
-<div id="UC-01"> 
-<h3>UC-01: Register as a new user</h3>
+<div id="UC-01">
+<h3>UC-01: Generate Checkins Using Standard Edward</h3>
 <table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>Users need to register themselves in this web application.</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Once per user</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>visit Login page</li>
-    <li>click to register as new user</li>
-    <li>enter identifying information: username, email, real name, password (twice)</li>
-    <li>submit form</li>
-    <li>check email</li>
-    <li>reply to confirmation message</li>
-    <li>log in</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If the username is taken, then the system will suggest an
-    available username based on the user's email address and/or real name.
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
+<tr>
+<th>Summary:</th>
+<td>A TM8 user generates a daily checkin using Edward's standard calendar-based workflow.</td>
+</tr>
+<tr>
+<th>Priority:</th>
+<td>Essential</td>
+</tr>
+<tr>
+<th>Use Frequency:</th>
+<td>Often</td>
+</tr>
+<tr>
+<th>Main Success Scenario:</th>
+<td>
+<ol>
+<li>User signs in using Google.</li>
+<li>User selects a target date.</li>
+<li>User clicks Generate Checkin.</li>
+<li>Edward retrieves calendar events from Google Calendar.</li>
+<li>Edward generates and displays the daily checkin.</li>
+</ol>
+</td>
+</tr>
+<tr>
+<th><div>Alternative</div> Scenario Extensions:</th>
+<td>
+<ul>
+<li>If authentication fails, then the user is prompted to sign in again.</li>
+<li>If no calendar events are found, then Edward informs the user that no activities were found for the selected date.</li>
+<li>If the Google Calendar API is unavailable, then Edward displays an error message and the checkin is not generated.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<th>Notes and Questions</th>
+<td>
+<ul>
+<li><strong>Note:</strong> This workflow uses only Google Calendar as the data source.</li>
+<li><strong>Question:</strong> Should manually entered activities be supported in the Standard Edward workflow?</li>
+</ul>
+</td>
+</tr>
 </table>
 </div>
-
-
-<div id="UC-02"> 
-<h3>UC-02: Request new password</h3>
+<div id="UC-02">
+<h3>UC-02: Review Aggregated Workplace Activity</h3>
 <table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>If a user forgets their password, they can request a new one be
-  emailed to them.</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Expected</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Rarely</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>TODO</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>Alternatively, we could use password hints.</li>
-   </ul>
-  </td>
- </tr>
+<tr>
+<th>Summary:</th>
+<td>A TM8 user reviews the aggregated workplace activity collected from Google Calendar, Gmail, and Slack before generating a checkin.</td>
+</tr>
+<tr>
+<th>Priority:</th>
+<td>Essential</td>
+</tr>
+<tr>
+<th>Use Frequency:</th>
+<td>Often</td>
+</tr>
+<tr>
+<th>Main Success Scenario:</th>
+<td><ol><li>Open AI Assistance.</li><li>Select Activity Log.</li><li>Review the aggregated activity.</li><li>Copy the activity log if needed.</li></ol></td>
+</tr>
+<tr>
+<th><div>Alternative</div> Scenario Extensions:</th>
+<td><ul><li>If activity cannot be retrieved, an error message is displayed.</li><li>If no activity exists for the selected date, an empty activity log is shown.</li></ul></td>
+</tr>
+<tr>
+<th>Notes and Questions</th>
+<td><ul><li>Displays a human-readable summary while preserving the raw activity for copying.</li><li>Should users be allowed to edit the activity before copying?</li></ul></td>
+</tr>
 </table>
-</div>
-
-
-
-<div id="UC-03"> 
-<h3>UC-03: Edit user profile</h3>
+</div><div id="UC-03">
+<h3>UC-03: Generate AI-Assisted Checkins Using Jacob</h3>
 <table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>Users can edit their own account preferences.</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Expected</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Rarely</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>TODO</li>
-   </ol>
-  </td>
- </tr>
+<tr>
+<th>Summary:</th>
+<td>A TM8 user generates a daily checkin using Jacob after reviewing the aggregated workplace activity.</td>
+</tr>
+<tr>
+<th>Priority:</th>
+<td>Essential</td>
+</tr>
+<tr>
+<th>Use Frequency:</th>
+<td>Often</td>
+</tr>
+<tr>
+<th>Main Success Scenario:</th>
+<td><ol><li>Open AI Assistance.</li><li>Launch Jacob.</li><li>Paste the copied activity log.</li><li>Review the generated checkin.</li></ol></td>
+</tr>
+<tr>
+<th><div>Alternative</div> Scenario Extensions:</th>
+<td><ul><li>If insufficient activity exists, Jacob requests additional information.</li><li>If the copied activity is invalid, Jacob asks the user to provide valid activity data.</li></ul></td>
+</tr>
+<tr>
+<th>Notes and Questions</th>
+<td><ul><li>Jacob generates grounded checkins only from supplied activity.</li><li>Should Edward automatically open Jacob after copying?</li></ul></td>
+</tr>
 </table>
-</div>
-
-
-
-<div id="UC-04"> 
-<h3>UC-04: View user profile</h3>
+</div><div id="UC-04">
+<h3>UC-04: Authenticate with Google Workspace</h3>
 <table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>Users can view the profiles of other users under certain circumstances.</td>
- </tr>
- <tr>
-  <th>Direct Actors:</th>
-  <td>
-   <div>Admin: Web-site administrator</div>
-  </td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Expected</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Rarely</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>TODO</li>
-   </ol>
-  </td>
- </tr>
+<tr>
+<th>Summary:</th>
+<td>A TM8 user authenticates with Google to access supported Google services.</td>
+</tr>
+<tr>
+<th>Priority:</th>
+<td>Essential</td>
+</tr>
+<tr>
+<th>Use Frequency:</th>
+<td>Once</td>
+</tr>
+<tr>
+<th>Main Success Scenario:</th>
+<td><ol><li>Select Sign in with Google.</li><li>Grant requested permissions.</li><li>Return to Edward.</li></ol></td>
+</tr>
+<tr>
+<th><div>Alternative</div> Scenario Extensions:</th>
+<td><ul><li>If authentication is cancelled, no session is created.</li><li>If authentication fails, the user is prompted to retry.</li></ul></td>
+</tr>
+<tr>
+<th>Notes and Questions</th>
+<td><ul><li>Calendar and Gmail permissions are requested during authentication.</li><li>Should additional Google scopes be supported?</li></ul></td>
+</tr>
 </table>
-</div>
-
-
-<div id="UC-10"> 
-<h3>UC-10: Create course</h3>
+</div><div id="UC-05">
+<h3>UC-05: Connect Slack Workspace</h3>
 <table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>An administrator creates dozens of course offerings before the
-  beginning of each school term.</td>
- </tr>
- <tr>
-  <th>Direct Actors:</th>
-  <td>
-   <div>Admin: Web-site administrator</div>
-  </td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Often</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>visit administrative function menu</li>
-    <li>click add course</li>
-    <li>enter course information: name, number, instructor, capacity</li>
-    <li>submit form</li>
-    <li>see course list with new course added</li>
-   </ol>
-  </td>
- </tr>
+<tr>
+<th>Summary:</th>
+<td>A TM8 user authorizes Slack to allow workplace activity retrieval.</td>
+</tr>
+<tr>
+<th>Priority:</th>
+<td>Expected</td>
+</tr>
+<tr>
+<th>Use Frequency:</th>
+<td>Once</td>
+</tr>
+<tr>
+<th>Main Success Scenario:</th>
+<td><ol><li>Start Slack authorization.</li><li>Grant requested permissions.</li><li>Return to Edward.</li></ol></td>
+</tr>
+<tr>
+<th><div>Alternative</div> Scenario Extensions:</th>
+<td><ul><li>If authorization is denied, Slack activity is unavailable.</li><li>If Slack authentication fails, the user is prompted to retry.</li></ul></td>
+</tr>
+<tr>
+<th>Notes and Questions</th>
+<td><ul><li>Slack is used only after authorization.</li><li>Should Slack reconnection be supported?</li></ul></td>
+</tr>
 </table>
-</div>
-
-
-<div id="UC-11"> 
-<h3>UC-11: View catalog description</h3>
+</div><div id="UC-06">
+<h3>UC-06: Retrieve Activity for a Selected Date</h3>
 <table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>Students may view the course catalog description of a course
-  before registering.  They are especially likely to view it if they
-  are prevented from enrolling in a course because of a missing
-  prerequisite. </td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Sometimes</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>visit one of several in application pages that deal with courses</li>
-    <li>click link to course description</li>
-    <li>see course description in pop-up window</li>
-    <li>close pop-up window to continue using application</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>How do we accommodate users that configure their browsers to block pop-ups?</li>
-   </ul>
-  </td>
- </tr>
+<tr>
+<th>Summary:</th>
+<td>A TM8 user retrieves workplace activity for a selected date.</td>
+</tr>
+<tr>
+<th>Priority:</th>
+<td>Essential</td>
+</tr>
+<tr>
+<th>Use Frequency:</th>
+<td>Often</td>
+</tr>
+<tr>
+<th>Main Success Scenario:</th>
+<td><ol><li>Select a date.</li><li>Generate activity.</li><li>Retrieve Calendar, Gmail, and Slack activity.</li><li>Display the aggregated activity.</li></ol></td>
+</tr>
+<tr>
+<th><div>Alternative</div> Scenario Extensions:</th>
+<td><ul><li>If no activity exists, an empty result is returned.</li><li>If one service is unavailable, remaining services continue to load.</li></ul></td>
+</tr>
+<tr>
+<th>Notes and Questions</th>
+<td><ul><li>Uses a common date range across all connectors.</li><li>Should custom date ranges be supported?</li></ul></td>
+</tr>
 </table>
-</div>
-
-
-<div id="UC-20"> 
-<h3>UC-20: Enroll in course</h3>
+</div><div id="UC-07">
+<h3>UC-07: Generate Historical Checkins</h3>
 <table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>Students will enroll in courses</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Often</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>visit main menu</li>
-    <li>click link to enroll in courses</li>
-    <li>enter major and course number</li>
-    <li>select course section from list of available sections</li>
-    <li>submit choice</li>
-    <li>confirm choice</li>
-    <li>see list of current enrolled courses</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If a course is full, then the student may join the wait-list.
-     <ul>
-      <li>Course capacity and number of students currently waiting
-      should be shown so that students may choose the section that
-      they are most likely to be able to get into.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
+<tr>
+<th>Summary:</th>
+<td>A TM8 user generates checkins for previous dates.</td>
+</tr>
+<tr>
+<th>Priority:</th>
+<td>Expected</td>
+</tr>
+<tr>
+<th>Use Frequency:</th>
+<td>Sometimes</td>
+</tr>
+<tr>
+<th>Main Success Scenario:</th>
+<td><ol><li>Select a previous date.</li><li>Generate activity.</li><li>Review activity.</li><li>Generate the checkin.</li></ol></td>
+</tr>
+<tr>
+<th><div>Alternative</div> Scenario Extensions:</th>
+<td><ul><li>If historical activity is unavailable, notify the user.</li><li>If APIs no longer provide historical data, generate from available sources only.</li></ul></td>
+</tr>
+<tr>
+<th>Notes and Questions</th>
+<td><ul><li>Supports backlog completion.</li><li>How far back should activity retrieval be supported?</li></ul></td>
+</tr>
 </table>
-</div>
-
-
-<div id="UC-21"> 
-<h3>UC-21: Drop a course</h3>
+</div><div id="UC-08">
+<h3>UC-08: View Human-Readable Activity Summary</h3>
 <table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>A student may drop a course that they are enrolled in.</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Sometimes</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>visit list of currently enrolled courses</li>
-    <li>select course from list</li>
-    <li>click button to drop course</li>
-    <li>see warning that they may not be able to add this course again</li>
-    <li>confirm choice</li>
-    <li>see revised list of currently enrolled courses</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>Only one course can be dropped at a time.  There is no need to
-    allow students to quickly drop more than one course.</li>
-    <li>It would be nice to offer an atomic "switch sections"
-    operation that drops and adds another, or does nothing.</li>
-   </ul>
-  </td>
- </tr>
+<tr>
+<th>Summary:</th>
+<td>A TM8 user views collected workplace activity in a readable format.</td>
+</tr>
+<tr>
+<th>Priority:</th>
+<td>Expected</td>
+</tr>
+<tr>
+<th>Use Frequency:</th>
+<td>Often</td>
+</tr>
+<tr>
+<th>Main Success Scenario:</th>
+<td><ol><li>Open Activity Log.</li><li>Review Calendar, Slack, and Gmail sections.</li><li>Close the activity log.</li></ol></td>
+</tr>
+<tr>
+<th><div>Alternative</div> Scenario Extensions:</th>
+<td><ul><li>If formatting fails, show the raw activity.</li><li>If one section is empty, continue displaying the remaining sections.</li></ul></td>
+</tr>
+<tr>
+<th>Notes and Questions</th>
+<td><ul><li>Activity is grouped by source.</li><li>Should activities be sorted chronologically?</li></ul></td>
+</tr>
 </table>
-</div>
-
-<div id="UC-30"> 
-<h3>UC-30: View room description</h3>
+</div><div id="UC-09">
+<h3>UC-09: Copy Activity Log</h3>
 <table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>Users can view descriptions of classrooms.  E.g., is it a
-  lecture hall or a lab?  E.g., does it have a built-in LCD projector?</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Rarely</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>TODO</li>
-   </ol>
-  </td>
- </tr>
+<tr>
+<th>Summary:</th>
+<td>A TM8 user copies the generated activity for use with Jacob.</td>
+</tr>
+<tr>
+<th>Priority:</th>
+<td>Essential</td>
+</tr>
+<tr>
+<th>Use Frequency:</th>
+<td>Often</td>
+</tr>
+<tr>
+<th>Main Success Scenario:</th>
+<td><ol><li>Open My Activities.</li><li>Select Copy.</li><li>Receive confirmation.</li></ol></td>
+</tr>
+<tr>
+<th><div>Alternative</div> Scenario Extensions:</th>
+<td><ul><li>If copying fails, display an error message.</li></ul></td>
+</tr>
+<tr>
+<th>Notes and Questions</th>
+<td><ul><li>Copies the structured activity data rather than the formatted view.</li><li>Should automatic copying be supported?</li></ul></td>
+</tr>
 </table>
-</div>
-
-<div id="UC-31"> 
-<h3>UC-31: Assign course to room</h3>
+</div><div id="UC-10">
+<h3>UC-10: Generate General TM8 Checkins</h3>
 <table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>An administrator assigns each course to a room.  This is often
-  done after a course is created, but it can be redone at any time.</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Often</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>TODO</li>
-   </ol>
-  </td>
- </tr>
+<tr>
+<th>Summary:</th>
+<td>Jacob generates checkins following the standard TM8 workflow.</td>
+</tr>
+<tr>
+<th>Priority:</th>
+<td>Essential</td>
+</tr>
+<tr>
+<th>Use Frequency:</th>
+<td>Often</td>
+</tr>
+<tr>
+<th>Main Success Scenario:</th>
+<td><ol><li>Receive activity data.</li><li>Interpret activities.</li><li>Generate the checkin.</li><li>Display the result.</li></ol></td>
+</tr>
+<tr>
+<th><div>Alternative</div> Scenario Extensions:</th>
+<td><ul><li>If activity is incomplete, Jacob asks for clarification.</li><li>If no work is detected, Jacob informs the user.</li></ul></td>
+</tr>
+<tr>
+<th>Notes and Questions</th>
+<td><ul><li>Uses the General Jacob prompt.</li><li>Should manual edits be supported before generation?</li></ul></td>
+</tr>
 </table>
-</div>
-
-
-<div id="UC-40"> 
-<h3>UC-40: USE CASE NAME</h3>
+</div><div id="UC-11">
+<h3>UC-11: Generate DataOps TM8 Checkins</h3>
 <table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
+<tr>
+<th>Summary:</th>
+<td>Jacob generates checkins following the DataOps SOP.</td>
+</tr>
+<tr>
+<th>Priority:</th>
+<td>Expected</td>
+</tr>
+<tr>
+<th>Use Frequency:</th>
+<td>Sometimes</td>
+</tr>
+<tr>
+<th>Main Success Scenario:</th>
+<td><ol><li>Detect DataOps activity.</li><li>Request user confirmation.</li><li>Apply the DataOps prompt.</li><li>Generate the SOP-compliant checkin.</li></ol></td>
+</tr>
+<tr>
+<th><div>Alternative</div> Scenario Extensions:</th>
+<td><ul><li>If the user declines, continue using the General workflow.</li><li>If required fields are missing, request clarification.</li></ul></td>
+</tr>
+<tr>
+<th>Notes and Questions</th>
+<td><ul><li>Uses the DataOps instruction pack only after confirmation.</li><li>Should additional TM8 specializations be supported?</li></ul></td>
+</tr>
 </table>
-</div>
-
-
-<div id="UC-41"> 
-<h3>UC-41: USE CASE NAME</h3>
+</div><div id="UC-12">
+<h3>UC-12: Detect DataOps Workflow</h3>
 <table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
+<tr>
+<th>Summary:</th>
+<td>Jacob determines whether the supplied activity belongs to the DataOps TM8.</td>
+</tr>
+<tr>
+<th>Priority:</th>
+<td>Expected</td>
+</tr>
+<tr>
+<th>Use Frequency:</th>
+<td>Sometimes</td>
+</tr>
+<tr>
+<th>Main Success Scenario:</th>
+<td><ol><li>Inspect activity.</li><li>Detect DataOps indicators.</li><li>Ask for confirmation.</li><li>Select the operating mode.</li></ol></td>
+</tr>
+<tr>
+<th><div>Alternative</div> Scenario Extensions:</th>
+<td><ul><li>If DataOps is not detected, remain in General mode.</li></ul></td>
+</tr>
+<tr>
+<th>Notes and Questions</th>
+<td><ul><li>Detection is based on activity evidence.</li><li>Should users be able to manually switch modes?</li></ul></td>
+</tr>
 </table>
-</div>
-
-<div id="UC-42"> 
-<h3>UC-42: USE CASE NAME</h3>
+</div><div id="UC-13">
+<h3>UC-13: Request Missing Information</h3>
 <table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
+<tr>
+<th>Summary:</th>
+<td>Jacob requests additional information when required fields cannot be grounded.</td>
+</tr>
+<tr>
+<th>Priority:</th>
+<td>Essential</td>
+</tr>
+<tr>
+<th>Use Frequency:</th>
+<td>Sometimes</td>
+</tr>
+<tr>
+<th>Main Success Scenario:</th>
+<td><ol><li>Detect missing information.</li><li>Ask targeted questions.</li><li>Receive user response.</li><li>Continue generation.</li></ol></td>
+</tr>
+<tr>
+<th><div>Alternative</div> Scenario Extensions:</th>
+<td><ul><li>If the user declines to answer, generation stops.</li></ul></td>
+</tr>
+<tr>
+<th>Notes and Questions</th>
+<td><ul><li>Prevents unsupported assumptions.</li><li>Should partial checkins be allowed?</li></ul></td>
+</tr>
 </table>
-</div>
-
-
-<div id="UC-50"> 
-<h3>UC-50: USE CASE NAME</h3>
+</div><div id="UC-14">
+<h3>UC-14: Aggregate Workplace Activity</h3>
 <table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
+<tr>
+<th>Summary:</th>
+<td>Edward aggregates Calendar, Gmail, and Slack activity into a unified activity log.</td>
+</tr>
+<tr>
+<th>Priority:</th>
+<td>Essential</td>
+</tr>
+<tr>
+<th>Use Frequency:</th>
+<td>Often</td>
+</tr>
+<tr>
+<th>Main Success Scenario:</th>
+<td><ol><li>Retrieve activities.</li><li>Normalize each source.</li><li>Merge activity.</li><li>Produce the activity log.</li></ol></td>
+</tr>
+<tr>
+<th><div>Alternative</div> Scenario Extensions:</th>
+<td><ul><li>If one source fails, continue with available sources.</li></ul></td>
+</tr>
+<tr>
+<th>Notes and Questions</th>
+<td><ul><li>Uses Dagster orchestration.</li><li>Should additional connectors be supported?</li></ul></td>
+</tr>
 </table>
-</div>
-
-
-<div id="UC-51"> 
-<h3>UC-51: USE CASE NAME</h3>
+</div><div id="UC-15">
+<h3>UC-15: Produce Grounded Checkins</h3>
 <table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
+<tr>
+<th>Summary:</th>
+<td>Jacob generates checkins using only supported workplace evidence.</td>
+</tr>
+<tr>
+<th>Priority:</th>
+<td>Essential</td>
+</tr>
+<tr>
+<th>Use Frequency:</th>
+<td>Always</td>
+</tr>
+<tr>
+<th>Main Success Scenario:</th>
+<td><ol><li>Validate activity.</li><li>Apply prompt rules.</li><li>Generate the checkin.</li><li>Present the result.</li></ol></td>
+</tr>
+<tr>
+<th><div>Alternative</div> Scenario Extensions:</th>
+<td><ul><li>If evidence is insufficient, request clarification instead of guessing.</li></ul></td>
+</tr>
+<tr>
+<th>Notes and Questions</th>
+<td><ul><li>Hallucinated work is not permitted.</li><li>Should confidence reporting be exposed to users?</li></ul></td>
+</tr>
 </table>
-</div>
-
-<div id="UC-52"> 
-<h3>UC-52: USE CASE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</table>
-</div>
-
-
-<div id="UC-60"> 
-<h3>UC-60: USE CASE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</table>
-</div>
-
-
-<div id="UC-61"> 
-<h3>UC-61: USE CASE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</table>
-</div>
-
-<div id="UC-62"> 
-<h3>UC-62: USE CASE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</table>
-</div>
-
-
-<div id="UC-70"> 
-<h3>UC-70: USE CASE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</table>
-</div>
-
-
-<div id="UC-71"> 
-<h3>UC-71: USE CASE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</table>
-</div>
-
-<div id="UC-72"> 
-<h3>UC-72: USE CASE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</table>
-</div>
-
-
-
-<div id="UC-80">
-<h3>UC-80: USE CASE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</table>
-</div>
-
-<div id="UC-81">
-<h3>UC-81: USE CASE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</table>
-</div>
-
-
-<div id="UC-82">
-<h3>UC-82: USE CASE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</table>
-</div>
-
-
-
-<div id="UC-90">
-<h3>UC-90: USE CASE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</table>
-</div>
-
-
-<div id="UC-91">
-<h3>UC-91: USE CASE NAME</h3>
-<table border="1" cellpadding="3" cellspacing="2" class="axial">
- <tr>
-  <th>Summary:</th>
-  <td>1-3 SENTENCES</td>
- </tr>
- <tr>
-  <th>Priority:</th>
-  <td>Essential | Expected | Desired | Optional</td>
- </tr>
- <tr>
-  <th>Use Frequency:</th>
-  <td>Always | Often | Sometimes | Rarely | Once</td>
- </tr>
- <tr>
-  <th>Main Success Scenario:</th>
-  <td>
-   <ol>
-    <li>STEP</li>
-    <li>STEP</li>
-    <li>STEP</li>
-   </ol>
-  </td>
- </tr>
- <tr>
-  <th><div>Alternative</div> Scenario Extensions:</th>
-  <td>
-   <ul>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-    <li>If CONDITION, then ALTERNATIVE STEPS.
-     <ul>
-      <li>NOTES or DETAILS.</li>
-     </ul>
-    </li>
-   </ul>
-  </td>
- </tr>
- <tr>
-  <th>Notes and Questions</th>
-  <td>
-   <ul>
-    <li>NOTE</li>
-    <li>QUESTION</li>
-   </ul>
-  </td>
- </tr>
-</table>
-</div>
-
-
-
-
-</div>
-
-  <div class="todo">
-  TODO:  Check for <a
-  href="http://readyset.tigris.org/words-of-wisdom/use-cases.html">words
-  of wisdom</a> and discuss ways to improve this template.
-  Or, evaluate the ReadySET Pro <a
-  href="http://www.readysetpro.com/">professional use case template</a>.
-  </div>
+</div></div>
 
 <div class="legal1">Company Proprietary</div>
-
 <div class="footnote">
- Copyright &#169; 2003-2004 Jason Robbins.  All rights reserved. <a href="readyset-license.html">License terms</a>.
+ Copyright &#169 2003-2004 Jason Robbins.  All rights reserved. <a href="readyset-license.html">License terms</a>.
  Retain this copyright statement whenever this file is used as a
  template.
 </div>
-
 </div>
 </body>
 </html>
