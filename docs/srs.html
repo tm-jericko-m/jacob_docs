@@ -24,11 +24,11 @@
  <table border="1" cellpadding="3" cellspacing="2" class="axial">
   <tr>
    <th>Project:</th> 
-   <td><a href="index.html">PROJECTNAME</a></td> 
+   <td><a href="index.html">Jacob (formerly Edward): An AI-Assisted Checkin Generator</a></td> 
   </tr>
   <tr>
    <th>Internal Release Number:</th> 
-   <td>X.Y.Z</td> 
+   <td>1.0.0</td> 
   </tr>
   <tr>
    <th>Attached worksheets:</th> 
@@ -42,49 +42,30 @@
    <td>
     <div><a href="proposal.html">Project proposal</a> &gt;
          <a href="user-needs.html">User needs</a></div>
-    <div>LINKS TO RELEVANT STANDARDS</div>
-    <div>LINKS TO OTHER DOCUMENTS</div>
-    <div><a href="glossary.html">Glossary</a></div>
    </td>
   </tr>
  </table>
  </div> <!-- /releaseinfo -->
 
 
- <div id="processimpact">
-  <strong>Process impact:</strong> The SRS
-  precisely defines the software product that will be built.  Decisions
-  made in writing the SRS are based on information in the <a
-  href="proposal.html">project proposal</a> and <a
-  href="user-needs.html">user needs</a> documents.  The SRS sets
-  requirements that must be satisfied by the <a
-  href="design.html">system design</a>.  The SRS is verified and
-  validated by activities outlined in the <a href="qa-plan">QA
-  plan</a>.
- </div> <!-- /processimpact -->
-
  <div id="introduction">
  <h3>Introduction</h3>
 
- <div class="todo">
-  TODO: Provide a brief overview of this release of the product.  You
-  can copy text from the project proposal, paste it here, and shorten it.
- </div>
 
- <p>PARAGRAPH</p>
+ <p>Jacob is an iteration of Edward, Thinking Machines' web application that assists TM8s in generating their daily checkins. Edward generates checkins primarily from Google Calendar events by extracting scheduled work activities and calculating the corresponding hours rendered. While this workflow is effective for scheduled work, it is limited by the information available in calendar events, which may not fully capture a TM8's daily activities.</p>
 
- <p>PARAGRAPH</p>
+ <p>Jacob extends Edward by incorporating additional workplace data sources, specifically Google Calendar, Gmail, and Slack, to provide a more comprehensive representation of a user's work activities. These sources are aggregated into a unified activity log, allowing the system to generate more grounded and context-aware daily checkins while reducing the amount of manual work required from TM8s.</p>
 
- <p>For more information, see the project <a
- href="proposal.html">proposal</a>.</p>
+ <p>Jacob also introduces an AI-assisted workflow through a Custom GPT specifically engineered for daily checkin generation. The AI model follows prompt-engineered instructions, validation rules, and curated knowledge files to generate grounded outputs based solely on retrieved workplace activity. For TM8s belonging to the DataOps team, Jacob supports an additional workflow that applies the DataOps Standard Operating Procedure (SOP) after user confirmation, enabling SOP-compliant checkin generation while preserving the standard workflow for all other users.</p>
+
+ <p>For more information, see the <a
+ href="proposal.html">Project Proposal</a>.</p>
  </div> <!-- /introduction -->
-
-
 
  <div id="usecases">
  <h3>Use Cases</h3>
 
- <p>ONE PARAGRAPH OVERVIEW</p>
+ <p>Jacob extends the existing Edward workflow by introducing AI-assisted checkin generation while preserving Edward's standard calendar-based functionality. Users may continue using Edward to generate calendar-based daily checkins or retrieve a unified activity log from Google Calendar, Gmail, and Slack for use with Jacob. Jacob supports both the general TM8 workflow and a specialized DataOps workflow, while also allowing users to generate checkins for previous dates to assist in completing backlogged submissions.</p>
 
  <p>Details:</p>
  <ul>
@@ -102,313 +83,288 @@
  <div id="functional">
  <h3>Functional Requirements</h3>
 
- <p>ONE PARAGRAPH OVERVIEW</p>
+ <p>This section describes the functional requirements introduced by Jacob as an extension of Edward. Jacob expands the application's capabilities by incorporating multiple workplace data sources, AI-assisted checkin generation, activity aggregation, and specialized DataOps workflows while preserving Edward's existing calendar-based functionality.</p>
 
  <p>Details:</p>
  <ul>
-  <li>The <a href="feature-set.html">feature set</a> lists all
-   features in an organized way.</li>
+  <li>The complete list of supported features is described in the <a href="feature-set.html">feature set</a> document.</li>
  </ul>
  </div> <!-- /functional -->
 
  <div id="nonfunctional">
  <h3>Non-Functional Requirements</h3>
 
- <div class="todo">
-  TODO: Describe the non-functional requirements for this release.
-  Some examples are provided below.
- </div>
-
  <dl>
 
   <dt>What are the usability requirements?</dt>
 
   <dd class="sample1">
-   <p>Our main criteria for making the system usable is the difficulty
-   of performing each high-frequency use case.  Difficulty depends on
-   the number of steps, the knowledge that the user must have at each
-   step, the decisions that the user must make at each step, and the
-   mechanics of each step (e.g., typing a book title exactly is hard,
-   clicking on a title in a list is easy).</p>
+   <p>The primary measure of usability is the application's ability to retrieve workplace activity accurately while providing a simple and familiar workflow for generating daily checkins. Users should be able to navigate the application with minimal effort regardless of whether they choose the Standard Edward workflow or the Jacob AI-assisted workflow.</p>
   
-   <p>The user interface should be as familiar as possible to users
-   who have used other web applications and Windows desktop
-   applications.  E.g., we will follow the UI guidelines for naming
-   menus, buttons, and dialog boxes whenever possible.
-   </p>
-
-   <p>PARAGRAPH</p>
+   <p>The user interface should remain consistent with Edward's existing design, allowing existing users to transition naturally to the new features introduced by Jacob. Aggregated activity should be presented in a human-readable format, organized by Calendar, Gmail, and Slack, eliminating the need for users to interpret raw JSON data. Common actions such as generating activity, copying activity logs, and generating checkins should require only a few interactions.</p>
 
    <p>Details:</p>
 
    <ul>
-    <li>Government customers will demand <a
-    href="http://www.section508.gov/">section508 compliance</a></li>
+    <li>Support selected dates.</li>
 
-    <li>Support learnability with principles of <a
-    href="http://www.foruse.com/articles/instructive.htm">Instructive
-    Interaction</a></li>
+    <li>Display clear loading indicators.</li>
 
-    <li>The customer wants extensive on-line help, but is not
-    demanding a printed manual.</li>
+    <li>Display clipboard confirmation after copying.</li>
+
+    <li>Use consistent terminology throughout the application.</li>
+
+    <li>Present activity grouped by Calendar, Gmail, and Slack.</li>
 
    </ul>
   </dd>
 
 
+  <dl>
+
   <dt>What are the reliability and up-time requirements?</dt>
 
   <dd class="sample1">
-   <p>PARAGRAPH</p>
+    <p>Jacob should continue operating even when one or more workplace connectors are unavailable. Failure to retrieve activity from one service should not prevent activity from being retrieved from the remaining available services. Likewise, if a user declines access to one connector, the application should continue functioning using the remaining authorized data sources.</p>
 
-   <p>PARAGRAPH</p>
+    <p>The AI-assisted workflow should continue generating checkins using whatever workplace activity is successfully retrieved while informing the user of any unavailable sources.</p>
 
-   <p>Details:</p>
+    <p>Details:</p>
 
-   <ul>
-    <li>DETAIL</li>
-    <li>DETAIL</li>
-    <li>DETAIL</li>
-   </ul>
+    <ul>
+      <li>Gracefully handle API failures.</li>
+      <li>Continue processing available activity sources.</li>
+      <li>Preserve generated activity files.</li>
+      <li>Retry failed API requests where appropriate.</li>
+    </ul>
   </dd>
 
 
   <dt>What are the safety requirements?</dt>
 
   <dd class="sample1">
-   <p>PARAGRAPH</p>
+    <p>Jacob is intended to assist TM8s in preparing their daily checkins and should not automatically submit generated outputs. Users remain responsible for reviewing generated checkins before submission.</p>
 
-   <p>PARAGRAPH</p>
+    <p>All retrieved workplace activity should remain unmodified and be treated as supporting evidence for AI-assisted generation.</p>
 
-   <p>Details:</p>
+    <p>Details:</p>
 
-   <ul>
-    <li>DETAIL</li>
-    <li>DETAIL</li>
-    <li>DETAIL</li>
-   </ul>
+    <ul>
+      <li>Use read-only APIs.</li>
+      <li>Do not automatically post generated checkins.</li>
+      <li>Require user review before submission.</li>
+      <li>Preserve retrieved workplace activity.</li>
+    </ul>
   </dd>
 
 
   <dt>What are the security requirements?</dt>
 
   <dd class="sample1">
-   <p>Access will be controlled with usernames and passwords.</p>
+    <p>Access to workplace data shall only occur after explicit user authorization. Jacob shall request permission before accessing Google Calendar, Gmail, or Slack and shall only retrieve information necessary for generating daily checkins.</p>
 
-   <p>Only administrator users will have access to administrative
-   functions, average users will not.</p>
+    <p>Authentication tokens shall be securely managed using trusted authentication services. When authentication expires, users shall be required to authenticate again before additional workplace data can be accessed.</p>
 
-   <p>Details:</p>
+    <p>Details:</p>
 
-   <ul>
-    <li>Passwords must be 4-14 characters long</li>
-    <li>We will not use encrypted communications (SSL) for this website</li>
-    <li>DETAIL</li>
-   </ul>
+    <ul>
+      <li>Firebase Authentication.</li>
+      <li>Google OAuth.</li>
+      <li>Slack OAuth.</li>
+      <li>Read-only permissions.</li>
+      <li>No persistent storage of user credentials.</li>
+    </ul>
   </dd>
 
 
-  <dt>What are the performance and scalability requirements requirements?</dt>
+  <dt>What are the performance and scalability requirements?</dt>
 
   <dd class="sample1">
-   <p>PARAGRAPH</p>
+    <p>Jacob should retrieve workplace activity and generate summarized activity within an acceptable response time for normal daily use. As additional workplace connectors or larger volumes of activity are introduced, the application should remain responsive without requiring major architectural changes.</p>
 
-   <p>PARAGRAPH</p>
+    <p>The activity aggregation pipeline should support future expansion while maintaining acceptable performance for both current-day and historical activity generation.</p>
 
-   <p>Details:</p>
+    <p>Details:</p>
 
-   <ul>
-    <li>DETAIL</li>
-    <li>DETAIL</li>
-    <li>DETAIL</li>
-   </ul>
+    <ul>
+      <li>Parallel API retrieval.</li>
+      <li>Efficient Dagster orchestration.</li>
+      <li>Modular connector architecture.</li>
+      <li>Support increasing activity volume.</li>
+    </ul>
   </dd>
 
 
   <dt>What are the maintainability and upgradability requirements?</dt>
 
   <dd class="sample1">
-   <p>Maintainability is our ability to make changes to the product
-   over time.  We need strong maintainability in order to retain our
-   early customers.  We will address this by anticipating several
-   types of change, and by carefully documenting our design and
-   implementation.</p>
+    <p>Jacob should remain easy to maintain by separating responsibilities across the frontend, backend, data orchestration pipeline, and AI prompting components. Individual API connectors and AI workflows should be independently extensible without requiring major modifications to the rest of the application.</p>
 
-   <p>Upgradability is our ability to cost-effectively deploy new
-   versions of the product to customers with minimal downtime or
-   disruption.  A key feature supporting this goal is automatic
-   download of patches and upgrade of the end-user's machine.  Also,
-   we shall use data file formats that include enough meta-data to
-   allow us to reliably transform existing customer data during an
-   upgrade.</p>
+    <p>Comprehensive project documentation should support future developers in understanding the system architecture, implementation decisions, and software requirements.</p>
 
-   <p>Details:</p>
+    <p>Details:</p>
 
-   <ul>
-    <li>DETAIL</li>
-    <li>DETAIL</li>
-    <li>DETAIL</li>
-   </ul>
+    <ul>
+      <li>New connectors can be added independently.</li>
+      <li>New TM8 workflows can be introduced.</li>
+      <li>Prompt files remain separate from application code.</li>
+      <li>Maintain modular frontend and backend architecture.</li>
+    </ul>
   </dd>
 
 
   <dt>What are the supportability and operability requirements?</dt>
 
   <dd class="sample1">
+    <p>The application should provide meaningful feedback whenever failures occur during authentication, API retrieval, or activity generation. Error messages should help users understand what occurred while application logs should assist developers in diagnosing and resolving issues.</p>
 
-   <p>Supportability is our ability to provide cost effective
-   technical support.  Our goal is to limit our support costs to only
-   5% of annual licensing fees.  The product's automatic upgrade
-   feature will help us easily deploy defect fixes to end-users.  The
-   user guide and product website will include a troubleshooting guide
-   and checklist of information to have at hand before contacting
-   technical support.</p>
+    <p>Project documentation should provide sufficient information for maintenance, onboarding, and future development.</p>
 
-   <p>Operability is our ability to host and operate the software as
-   an ASP (Application Service Provider).  The product features should
-   help us achieve our goal of 99.9% uptime (at most 43 minutes
-   downtime each month).  Key features supporting that are the ability
-   to do hot data backups, and application monitoring.</p>
+    <p>Details:</p>
 
-   <p>Details:</p>
-
-   <ul>
-    <li>DETAIL</li>
-    <li>DETAIL</li>
-    <li>DETAIL</li>
-   </ul>
+    <ul>
+      <li>Display API error messages.</li>
+      <li>Maintain Dagster execution logs.</li>
+      <li>Maintain repository documentation.</li>
+      <li>Maintain ReadySET documentation.</li>
+    </ul>
   </dd>
 
 
   <dt>What are the business life-cycle requirements?</dt>
 
   <dd class="sample1">
+    <p>Jacob should continue evolving while maintaining compatibility with existing workflows. The application should support future workplace connectors, AI improvements, and additional TM8-specific workflows without requiring significant architectural changes.</p>
 
-   <p>The business life-cycle of a product includes everything that
-   happens to that product over a period of several years, from
-   initial purchase decision, through important but infrequent use
-   cases, until product retirement.  Key life-cycle requirements are
-   listed below.</p>
+    <p>Historical activity and generated artifacts should remain available for future reference whenever applicable.</p>
 
-   <p>Details:</p>
+    <p>Details:</p>
 
-   <ul>
-    <li>Customers must be able to manage the number of licenses that
-    they have and make informed decisions to purchase more licenses
-    when needed</li>
-
-    <li>The product shall support daily operations and our year-end
-    audit</li>
-
-    <li>The customer data shall be stored in a format that is still
-    accessible even after the application has been retired</li>
-   </ul>
+    <ul>
+      <li>Support evolving TM8 workflows.</li>
+      <li>Support additional workplace connectors.</li>
+      <li>Support future AI model improvements.</li>
+      <li>Maintain compatibility with Edward.</li>
+      <li>Preserve historical activity logs.</li>
+      <li>Support additional TM8 specializations beyond DataOps.</li>
+    </ul>
   </dd>
 
- </dl>
- </div> <!-- /nonfunctional -->
+</dl>
+
+</div> <!-- /nonfunctional -->
 
 
- <div id="environmental">
- <h3>Environmental Requirements</h3>
+<div id="environmental">
+  <h3>Environmental Requirements</h3>
 
- <div class="todo">
-  TODO: Describe the environmental requirements for this release.
-  Environmental requirements describe the larger system of hardware,
-  software, and data that this product must work within.  Some
-  examples are provided below.
- </div>
+  <dl>
 
- <dl>
+    <dt>What are the system hardware requirements?</dt>
 
-  <dt>What are the system hardware requirements?</dt>
+    <dd class="sample1">
+      <p>Jacob is designed to operate on standard desktop and laptop computers capable of running modern web browsers. The application does not require specialized hardware and may be used on any device that supports modern web technologies and maintains a stable Internet connection for communication with external workplace services.</p>
 
-  <dd class="sample1">
-   <p>PARAGRAPH</p>
+      <p>Since Jacob relies on external APIs to retrieve workplace activity, Internet connectivity is required throughout authentication, activity retrieval, and AI-assisted checkin generation.</p>
 
-   <p>PARAGRAPH</p>
+      <p>Details:</p>
 
-   <p>Details:</p>
-
-   <ul>
-    <li>DETAIL</li>
-    <li>DETAIL</li>
-    <li>DETAIL</li>
-   </ul>
-  </dd>
+      <ul>
+        <li>Microsoft Windows.</li>
+        <li>macOS.</li>
+        <li>Linux.</li>
+        <li>Modern desktop or laptop computer.</li>
+        <li>Stable Internet connection.</li>
+        <li>Modern web browser.</li>
+      </ul>
+    </dd>
 
 
-  <dt>What are the system software requirements?</dt>
+    <dt>What are the system software requirements?</dt>
 
-  <dd class="sample1">
-   <p>PARAGRAPH</p>
+    <dd class="sample1">
+      <p>Jacob is implemented using modern web technologies to support a modular and maintainable architecture. The frontend is built using React, while the backend is implemented using Node.js. Data orchestration is handled by Dagster, and Firebase Authentication is used to manage user authentication.</p>
 
-   <p>PARAGRAPH</p>
+      <p>These technologies provide a scalable foundation that supports additional workplace connectors and future AI workflows.</p>
 
-   <p>Details:</p>
+      <p>Details:</p>
 
-   <ul>
-    <li>DETAIL</li>
-    <li>DETAIL</li>
-    <li>DETAIL</li>
-   </ul>
-  </dd>
-
-
-  <dt>What application program interfaces (<a
-  href="glossary-std.html#api" class="def">APIs</a>) must be provided?</dt>
-
-  <dd class="sample1">
-   <p>PARAGRAPH</p>
-
-   <p>PARAGRAPH</p>
-
-   <p>Details:</p>
-
-   <ul>
-    <li>We must implement this <a href="LINK-TO-STANDARD">standard API</a>.</li>
-    <li>DETAIL</li>
-    <li>DETAIL</li>
-   </ul>
-  </dd>
+      <ul>
+        <li>React.</li>
+        <li>Node.js.</li>
+        <li>Python.</li>
+        <li>Dagster.</li>
+        <li>Firebase Authentication.</li>
+      </ul>
+    </dd>
 
 
-  <dt>What are the data import and export requirements?</dt>
+    <dt>What application program interfaces (APIs) must be provided?</dt>
 
-  <dd class="sample1">
-   <p>PARAGRAPH</p>
+    <dd class="sample1">
+      <p>Jacob depends on several external APIs to retrieve workplace activity used during checkin generation. These APIs provide read-only access to user information after explicit authorization and serve as the primary evidence used by the AI-assisted workflow.</p>
 
-   <p>PARAGRAPH</p>
+      <p>Authentication services are also required to securely authorize access to workplace data.</p>
 
-   <p>Details:</p>
+      <p>Details:</p>
 
-   <ul>
-    <li>The system will store all data in a standard SQL database, where it can be accessed by other programs.</li>
+      <ul>
+        <li>Google Calendar API.</li>
+        <li>Gmail API.</li>
+        <li>Slack API.</li>
+        <li>Google Identity Services.</li>
+        <li>Firebase Authentication.</li>
+      </ul>
+    </dd>
 
-    <li>The system will store all data in an XML file, using a <a href="LINK-TO-STANDARD">standard DTD</a>.</li>
 
-    <li>The system will read and write valid .XYZ files used by OTHER APPLICATION</li>
+    <dt>What are the data import and export requirements?</dt>
 
-    <li>DETAIL</li>
-   </ul>
-  </dd>
+    <dd class="sample1">
+      <p>Jacob imports workplace activity from supported external services and transforms the retrieved information into a unified activity log suitable for AI-assisted processing. The imported activity is preserved in intermediate artifacts before being merged into a single activity representation.</p>
 
- </dl>
+      <p>The application exports a human-readable activity summary for user review, a structured activity log for AI consumption, and copy-pastable daily checkins generated by either Edward or Jacob.</p>
 
- </div> <!-- /environmental -->
+      <p>Details:</p>
+
+      <ul>
+        <li><strong>Imported Data</strong>
+          <ul>
+            <li>Google Calendar events.</li>
+            <li>Gmail metadata.</li>
+            <li>Slack workspace messages.</li>
+            <li>Slack workspace channels.</li>
+          </ul>
+        </li>
+
+        <li><strong>Generated Artifacts</strong>
+          <ul>
+            <li>calendar.json</li>
+            <li>gmail.json</li>
+            <li>slack.json</li>
+            <li>activity.jsonl</li>
+          </ul>
+        </li>
+
+        <li><strong>Exported Data</strong>
+          <ul>
+            <li>Human-readable activity summary.</li>
+            <li>Copyable activity log.</li>
+            <li>Generated daily checkins.</li>
+            <li>AI-assisted DataOps checkins (when applicable).</li>
+          </ul>
+        </li>
+      </ul>
+    </dd>
+
+  </dl>
+
+</div> <!-- /environmental -->
  
 </div>
 
 
- <div class="todo">
-  TODO:  Check for <a
-  href="http://readyset.tigris.org/words-of-wisdom/srs.html">words
-  of wisdom</a> and discuss ways to improve this template.
-  Or, evaluate the ReadySET Pro <a title="pro use case template and sample test plan"
-  href="http://www.readysetpro.com/">professional software requirements specification template</a>.
- </div>
-
-<div class="legal1">Company Proprietary</div>
+ <div class="legal1">Company Proprietary</div>
 
 <div class="footnote">
  Copyright &#169; 2003-2004 Jason Robbins.  All rights reserved. <a href="readyset-license.html">License terms</a>.
