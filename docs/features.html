@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//Tigris//DTD XHTML 1.0 Transitional//EN"
+"http://style.tigris.org/tigris_transitional.dtd">
+<html>
+<head>
+ <style type="text/css">
+/* <![CDATA[ */ 
+@import "css/readyset.css"; 
+@import "css/inst.css";
+/*  ]]> */
+ </style>
+
+<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+ <title>Features</title>
+</head>
+
+<body>
+<div class="app">
+<div class="readyset">
+
+
+<h2><a href="srs.html">SRS</a> &gt;
+    <a href="feature-set.html">Feature Set</a> &gt; Features</h2>
+
+ <div id="releaseinfo">
+ <h3>Release Information</h3>
+ <table border="1" cellpadding="3" cellspacing="2" class="axial">
+  <tr>
+   <th>Project:</th> 
+   <td><a href="index.html">PROJECTNAME</a></td> 
+  </tr>
+  <tr>
+   <th>Internal Release Number:</th> 
+   <td>X.Y.Z</td> 
+  </tr>
+  <tr>
+   <th>Related Documents:</th> 
+   <td>
+    <div><a href="proposal.html">Project proposal</a> &gt;
+         <a href="user-needs.html">User needs</a></div>
+    <div><a href="srs.html">SRS</a> &gt;
+         <a href="use-case-suite.html">Use case suite</a></div>
+    <div><a href="feature-format.html">Feature format</a></div>
+    <div>LINKS TO RELEVANT STANDARDS</div>
+    <div>LINKS TO OTHER DOCUMENTS</div>
+   </td>
+  </tr>
+ </table>
+ </div> <!-- /releaseinfo -->
+
+
+ <div id="processimpact">
+  <b>Process impact:</b> This is a set of detailed
+  feature descriptions.
+ </div> <!-- /processimpact -->
+
+<div class="todo">
+ TODO: For each feature listed in the <a
+ href="feature-set.html">feature set</a>, give a detailed description
+ of the feature here.  Describe each feature in enough detail that it
+ could be implemented by any member of the development team (not only
+ someone who already informally knows what to do).
+</div>
+
+<div class="tip">
+ TIP: Start with a short textual description of each feature.  Then,
+ add more formal information as needed to make each
+ description precise and unambiguous.  E.g.,
+    <ul>
+     <li>Precisely define valid inputs, and error handling</li>
+     <li>Specify data structures with UML or logical schema</li>
+     <li>Specify UI aspects of features with tiny mock-ups</li>
+     <li>Specify key decisions with decision trees or tables</li>
+     <li>Specify key algorithms with pseudo-code or flow charts</li>
+     <li>Specify state-based behavior with state machines or tables</li>
+     <li>Specify sequences of events with scenario diagrams</li>
+    </ul>
+</div>
+
+
+
+
+
+<div id="F-01"> 
+<h3>F-01: Connect a Slack Workspace</h3>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+<tr><th>Priority:</th><td>Expected</td></tr>
+<tr><th>Effort:</th><td>Days</td></tr>
+<tr><th>Risk:</th><td>1-Risk</td></tr>
+<tr><th>Functional area(s):</th><td>Authentication, Slack Integration</td></tr>
+<tr><th>Use case(s):</th><td><a href="use-cases.html#UC-05">UC-05</a></td></tr>
+<tr><th>Description:</th><td><p>Users authorize their Slack workspace to allow Jacob to retrieve workplace conversations for activity generation.</p><p>Precise Details:</p><ul><li>Uses Slack OAuth authentication.</li><li>Slack authorization may be cancelled.</li><li>Slack can be reconnected if authorization expires.</li></ul></td></tr>
+<tr><th>Notes and Questions:</th><td><ul><li>Slack integration is optional for Standard Edward.</li></ul></td></tr>
+</table></div>
+
+
+<div id="F-02"> 
+<h3>F-02: Retrieve Workplace Activity</h3>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+<tr><th>Priority:</th><td>Essential</td></tr>
+<tr><th>Effort:</th><td>Weeks</td></tr>
+<tr><th>Risk:</th><td>2-Risks</td></tr>
+<tr><th>Functional area(s):</th><td>Activity Aggregation</td></tr>
+<tr><th>Use case(s):</th><td><a href="use-cases.html#UC-02">UC-02</a> <a href="use-cases.html#UC-06">UC-06</a> <a href="use-cases.html#UC-14">UC-14</a></td></tr>
+<tr><th>Description:</th><td><p>Retrieve workplace activity from Google Calendar, Gmail, and Slack to produce a unified activity log for AI-assisted checkin generation.</p><p>Precise Details:</p><ul><li>Retrieves activity from Calendar, Gmail, and Slack.</li><li>Supports retrieval for a selected date.</li><li>Merges activity into a single activity log.</li></ul></td></tr>
+<tr><th>Notes and Questions:</th><td><ul><li>Retrieval continues when one service is temporarily unavailable.</li></ul></td></tr>
+</table></div>
+
+
+<div id="F-03"> 
+<h3>F-03: View a Unified Activity Summary</h3>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+<tr><th>Priority:</th><td>Essential</td></tr>
+<tr><th>Effort:</th><td>Days</td></tr>
+<tr><th>Risk:</th><td>Safe</td></tr>
+<tr><th>Functional area(s):</th><td>User Interface</td></tr>
+<tr><th>Use case(s):</th><td><a href="use-cases.html#UC-02">UC-02</a> <a href="use-cases.html#UC-08">UC-08</a></td></tr>
+<tr><th>Description:</th><td><p>Users can review a human-readable summary of the retrieved workplace activity before generating AI-assisted checkins.</p><p>Precise Details:</p><ul><li>Groups activities by Calendar, Slack, and Gmail.</li><li>Displays Slack channels and messages.</li><li>Displays Gmail subjects.</li></ul></td></tr>
+<tr><th>Notes and Questions:</th><td><ul><li>Intended for review before AI generation.</li></ul></td></tr>
+</table></div>
+
+
+<div id="F-04"> 
+<h3>F-04: Copy the Generated Activity Log</h3>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+<tr><th>Priority:</th><td>Essential</td></tr>
+<tr><th>Effort:</th><td>Hours</td></tr>
+<tr><th>Risk:</th><td>Safe</td></tr>
+<tr><th>Functional area(s):</th><td>User Interface</td></tr>
+<tr><th>Use case(s):</th><td><a href="use-cases.html#UC-09">UC-09</a></td></tr>
+<tr><th>Description:</th><td><p>Users can copy the generated activity log for use with Jacob.</p><p>Precise Details:</p><ul><li>Copies the complete activity payload.</li><li>Displays confirmation after copying.</li></ul></td></tr>
+<tr><th>Notes and Questions:</th><td><ul><li>Uses the system clipboard.</li></ul></td></tr>
+</table></div>
+
+
+<div id="F-05"> 
+<h3>F-05: Retrieve Activity for Previous Dates</h3>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+<tr><th>Priority:</th><td>Expected</td></tr>
+<tr><th>Effort:</th><td>Days</td></tr>
+<tr><th>Risk:</th><td>Safe</td></tr>
+<tr><th>Functional area(s):</th><td>Activity Aggregation</td></tr>
+<tr><th>Use case(s):</th><td><a href="use-cases.html#UC-07">UC-07</a></td></tr>
+<tr><th>Description:</th><td><p>Users can retrieve workplace activity for previous dates to generate historical checkins.</p><p>Precise Details:</p><ul><li>Supports historical date selection.</li><li>Uses the same workflow as current-day retrieval.</li></ul></td></tr>
+<tr><th>Notes and Questions:</th><td><ul><li>Intended to assist backlog completion.</li></ul></td></tr>
+</table></div>
+
+
+<div id="F-06"> 
+<h3>F-06: Generate AI-Assisted Daily Checkins</h3>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+<tr><th>Priority:</th><td>Essential</td></tr>
+<tr><th>Effort:</th><td>Weeks</td></tr>
+<tr><th>Risk:</th><td>2-Risks</td></tr>
+<tr><th>Functional area(s):</th><td>Artificial Intelligence</td></tr>
+<tr><th>Use case(s):</th><td><a href="use-cases.html#UC-03">UC-03</a> <a href="use-cases.html#UC-10">UC-10</a></td></tr>
+<tr><th>Description:</th><td><p>Jacob generates AI-assisted daily checkins using the supplied workplace activity.</p><p>Precise Details:</p><ul><li>Uses the activity log as input.</li><li>Produces copy-pastable daily checkins.</li><li>Generates concise work summaries.</li></ul></td></tr>
+<tr><th>Notes and Questions:</th><td><ul><li>Uses the General Jacob workflow by default.</li></ul></td></tr>
+</table></div>
+
+
+<div id="F-07"> 
+<h3>F-07: Generate Grounded Checkins Using Workplace Activity</h3>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+<tr><th>Priority:</th><td>Essential</td></tr>
+<tr><th>Effort:</th><td>Weeks</td></tr>
+<tr><th>Risk:</th><td>2-Risks</td></tr>
+<tr><th>Functional area(s):</th><td>Artificial Intelligence</td></tr>
+<tr><th>Use case(s):</th><td><a href="use-cases.html#UC-10">UC-10</a> <a href="use-cases.html#UC-15">UC-15</a></td></tr>
+<tr><th>Description:</th><td><p>Jacob generates checkins grounded only on retrieved workplace activity to improve accuracy and reduce unsupported information.</p><p>Precise Details:</p><ul><li>Uses Calendar, Gmail, and Slack as evidence.</li><li>Avoids unsupported assumptions.</li><li>Preserves project context whenever possible.</li></ul></td></tr>
+<tr><th>Notes and Questions:</th><td><ul><li>Grounded output is preferred over complete output.</li></ul></td></tr>
+</table></div>
+
+
+<div id="F-08"> 
+<h3>F-08: Ask Follow-up Questions When Additional Information Is Required</h3>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+<tr><th>Priority:</th><td>Essential</td></tr>
+<tr><th>Effort:</th><td>Days</td></tr>
+<tr><th>Risk:</th><td>1-Risk</td></tr>
+<tr><th>Functional area(s):</th><td>Artificial Intelligence</td></tr>
+<tr><th>Use case(s):</th><td><a href="use-cases.html#UC-13">UC-13</a> <a href="use-cases.html#UC-15">UC-15</a></td></tr>
+<tr><th>Description:</th><td><p>Jacob requests additional information whenever the available workplace activity is insufficient to generate a grounded checkin.</p><p>Precise Details:</p><ul><li>Detects missing information.</li><li>Requests only the required clarification.</li><li>Continues generation after user input.</li></ul></td></tr>
+<tr><th>Notes and Questions:</th><td><ul><li>Prevents unsupported assumptions.</li></ul></td></tr>
+</table></div>
+
+
+<div id="F-09"> 
+<h3>F-09: Help Complete Historical or Backlogged Checkins</h3>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+<tr><th>Priority:</th><td>Expected</td></tr>
+<tr><th>Effort:</th><td>Days</td></tr>
+<tr><th>Risk:</th><td>Safe</td></tr>
+<tr><th>Functional area(s):</th><td>Artificial Intelligence</td></tr>
+<tr><th>Use case(s):</th><td><a href="use-cases.html#UC-07">UC-07</a></td></tr>
+<tr><th>Description:</th><td><p>Jacob assists users in generating checkins for previous dates using retrieved historical workplace activity.</p><p>Precise Details:</p><ul><li>Supports historical activity retrieval.</li><li>Uses the same AI-assisted workflow.</li></ul></td></tr>
+<tr><th>Notes and Questions:</th><td><ul><li>tended for backlog completion.</li></ul></td></tr>
+</table></div>
+
+
+<div id="F-10"> 
+<h3>F-10: Detect Potential DataOps Activities</h3>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+<tr><th>Priority:</th><td>Expected</td></tr>
+<tr><th>Effort:</th><td>Days</td></tr>
+<tr><th>Risk:</th><td>1-Risk</td></tr>
+<tr><th>Functional area(s):</th><td>Artificial Intelligence</td></tr>
+<tr><th>Use case(s):</th><td><a href="use-cases.html#UC-12">UC-12</a></td></tr>
+<tr><th>Description:</th><td><p>Jacob analyzes the supplied activity to determine whether it likely belongs to the DataOps TM8 workflow.</p><p>Precise Details:</p><ul><li>Uses workplace activity as evidence.</li><li>Detects DataOps indicators.</li><li>Requests user confirmation before switching workflows.</li></ul></td></tr>
+<tr><th>Notes and Questions:</th><td><ul><li>Detection never changes workflows automatically.</li></ul></td></tr>
+</table></div>
+
+
+<div id="F-11"> 
+<h3>F-11: Generate DataOps SOP-Compliant Checkins</h3>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+<tr><th>Priority:</th><td>Expected</td></tr>
+<tr><th>Effort:</th><td>Days</td></tr>
+<tr><th>Risk:</th><td>2-Risks</td></tr>
+<tr><th>Functional area(s):</th><td>Artificial Intelligence</td></tr>
+<tr><th>Use case(s):</th><td><a href="use-cases.html#UC-11">UC-11</a></td></tr>
+<tr><th>Description:</th><td><p>Jacob generates checkins that comply with the DataOps TM8 Standard Operating Procedure after the user confirms the DataOps workflow.</p><p>Precise Details:</p><ul><li>Applies DataOps formatting.</li><li>Applies SDLC stage and task classification.</li><li>Generates SOP-compliant checkins.</li></ul></td></tr>
+<tr><th>Notes and Questions:</th><td><ul><li>Extends the General Jacob workflow.</li></ul></td></tr>
+</table></div>
+
+
+<div id="F-12"> 
+<h3>F-12: Ask Follow-up Questions When Required DataOps Information Is Missing</h3>
+<table border="1" cellpadding="3" cellspacing="2" class="axial">
+<tr><th>Priority:</th><td>Expected</td></tr>
+<tr><th>Effort:</th><td>Days</td></tr>
+<tr><th>Risk:</th><td>1-Risk</td></tr>
+<tr><th>Functional area(s):</th><td>Artificial Intelligence</td></tr>
+<tr><th>Use case(s):</th><td><a href="use-cases.html#UC-11">UC-11</a> <a href="use-cases.html#UC-13">UC-13</a></td></tr>
+<tr><th>Description:</th><td><p>Jacob requests additional DataOps-specific information whenever required fields cannot be grounded from the supplied activity.</p><p>Precise Details:</p><ul><li>Requests missing Jira identifiers.</li><li>Requests missing SDLC stage or task category.</li><li>Requests missing project or reported hours.</li><li>Generates the final checkin only after required information is available.</li></ul></td></tr>
+<tr><th>Notes and Questions:</th><td><ul><li>Prevents incomplete or non-compliant DataOps checkins.</li></ul></td></tr>
+</table></div>
+
+<div class="todo">
+  TODO:  Check for <a
+  href="http://readyset.tigris.org/words-of-wisdom/features.html">words
+  of wisdom</a> and discuss ways to improve this template.
+  Or, evaluate the ReadySET Pro <a title="pro use case template and sample test plan"
+  href="http://www.readysetpro.com/">professional feature specification template</a>.
+  </div>
+
+<div class="legal1">Company Proprietary</div>
+
+<div class="footnote">
+ Copyright &#169; 2003-2004 Jason Robbins.  All rights reserved. <a href="readyset-license.html">License terms</a>.
+ Retain this copyright statement whenever this file is used as a
+ template.
+</div>
+
+</div>
+</body>
+
+</html>
